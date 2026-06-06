@@ -31,7 +31,7 @@
         display: flex;
     }
 
-    .header-bottom__menu {
+    .header-bottom__item {
         display: none !important;
     }
 }

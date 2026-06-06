@@ -1,8 +1,8 @@
 /* css header */
 
 .logo img {
-    aspect-ratio: 191 / 72;
-    max-width: 190.31px;
+    aspect-ratio: 164 / 42;
+    max-width: 164px;
     width: 100%;
     height: auto;
 }
@@ -354,22 +354,6 @@
 
 /* css fade */
 /* Trạng thái ẩn ban đầu */
-/* .hidden-section {
-    opacity: 0;
-    transform: translateY(50px) scale(0.96);
-    filter: blur(10px);
-    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-                filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-
-    will-change: opacity, transform, filter;
-}
-
-.hidden-section.show-up {
-    opacity: 1;
-    transform: translateY(0) scale(1); 
-    filter: blur(0);
-} */
 
 section.hidden-section {
     opacity: 1; 
