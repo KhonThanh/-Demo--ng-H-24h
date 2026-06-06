@@ -231,40 +231,31 @@ function applyImageEnhancements(root = document) {
 
 // ✨ 3️⃣ Scroll Reveal Effect
 function initRevealEffect() {
+  // 1. Tự động gom hết tất cả section và footer (Không cần đụng vô HTML)
   const sections = document.querySelectorAll("section, footer");
   if (!sections.length) return;
 
+  // 2. Gắn class 'hidden-section' lúc mới load trang để CSS chuẩn bị sẵn sàng
   sections.forEach(sec => sec.classList.add("hidden-section"));
 
-  let revealIndex = 0;
-  let resetTimeout; // Biến dùng để reset bộ đếm
-
+  // 3. Setup "mắt thần" (Intersection Observer)
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+      // Khi người dùng cuộn chuột tới vùng của khối này
       if (entry.isIntersecting) {
         const el = entry.target;
 
-        // Tăng delay lên 100ms (thay vì 20ms) để thấy rõ sự nối đuôi "ảo diệu" hơn
-        el.style.transitionDelay = `${revealIndex * 100}ms`;
-
+        // Bật công tắc: Thêm class 'show-up' để CSS kích hoạt hiệu ứng múa may
         el.classList.add("show-up");
+
+        // Hủy theo dõi khối này ngay lập tức (Để hiệu ứng chỉ chạy đúng 1 lần, cuộn lên cuộn xuống không bị giật lại)
         observer.unobserve(el);
-
-        revealIndex++;
-
-        // Bí kíp ở đây: Nếu trong vòng 100ms không có section nào mới xuất hiện
-        // thì reset bộ đếm về 0. Tránh việc các section ở cuối trang bị delay mấy giây.
-        clearTimeout(resetTimeout);
-        resetTimeout = setTimeout(() => {
-          revealIndex = 0;
-        }, 100);
       }
     });
   }, {
-    threshold: 0.1, // Hiện ra 10% là bắt đầu kích hoạt
-    rootMargin: "0px 0px -10% 0px" // Kích hoạt sớm hơn 1 xíu để khách không thấy khoảng trắng
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px"
   });
-
   sections.forEach(sec => observer.observe(sec));
 }
 
@@ -394,10 +385,13 @@ function initSwiperSlider({
       let currentSlideCount = slides.length;
       const requiredForLoop = slidesPerView > 1 ? slidesPerView * 2 : 3;
       const actualMin = Math.max(minSlides, requiredForLoop);
+      if (currentSlideCount > 0 && currentSlideCount < actualMin) {
+        const multiplier = Math.ceil(actualMin / currentSlideCount) - 1;
 
-      if (currentSlideCount < actualMin) {
-        for (let i = 0; i < actualMin - currentSlideCount; i++) {
-          wrapper.appendChild(slides[i % currentSlideCount].cloneNode(true));
+        for (let i = 0; i < multiplier; i++) {
+          slides.forEach(slide => {
+            wrapper.appendChild(slide.cloneNode(true));
+          });
         }
       }
     }
@@ -512,57 +506,57 @@ function initFormValidation(root = document) {
 
 // js add active định vị ở menu
 function initUniversalActiveMenu(menuSelector = '', activeClassName = 'active') {
-    const currentUrl = window.location.href.split(/[?#]/)[0];
+  const currentUrl = window.location.href.split(/[?#]/)[0];
 
-    const menuLinks = document.querySelectorAll(`${menuSelector} a`);
-    let bestMatch = null;
-    let longestMatchLength = 0;
+  const menuLinks = document.querySelectorAll(`${menuSelector} a`);
+  let bestMatch = null;
+  let longestMatchLength = 0;
 
-    menuLinks.forEach(link => {
-        const hrefAttr = link.getAttribute('href');
-        if (!hrefAttr || hrefAttr.startsWith('#') || hrefAttr.startsWith('javascript')) return;
-        const linkUrl = link.href.split(/[?#]/)[0];
+  menuLinks.forEach(link => {
+    const hrefAttr = link.getAttribute('href');
+    if (!hrefAttr || hrefAttr.startsWith('#') || hrefAttr.startsWith('javascript')) return;
+    const linkUrl = link.href.split(/[?#]/)[0];
 
-        // ==========================================
-        // VŨ KHÍ MỚI: Bắt theo keyword từ data-match
-        // ==========================================
-        const matchKeyword = link.getAttribute('data-match');
-        if (matchKeyword && currentUrl.includes(matchKeyword)) {
-            bestMatch = link;
-            longestMatchLength = 9999; // Cấp quyền ưu tiên tuyệt đối, khỏi check mấy cái dưới
-            return;
-        }
+    // ==========================================
+    // VŨ KHÍ MỚI: Bắt theo keyword từ data-match
+    // ==========================================
+    const matchKeyword = link.getAttribute('data-match');
+    if (matchKeyword && currentUrl.includes(matchKeyword)) {
+      bestMatch = link;
+      longestMatchLength = 9999; // Cấp quyền ưu tiên tuyệt đối, khỏi check mấy cái dưới
+      return;
+    }
 
-        // Logic cũ (Vẫn giữ để chạy cho các trang bình thường không có data-match)
-        if (currentUrl === linkUrl) {
-            bestMatch = link;
-            longestMatchLength = linkUrl.length;
-        } else if (currentUrl.startsWith(linkUrl)) {
-            const isHomePage = linkUrl.endsWith('/') || linkUrl.endsWith('index.html') || linkUrl.endsWith('/en') || linkUrl.endsWith('/kn');
+    // Logic cũ (Vẫn giữ để chạy cho các trang bình thường không có data-match)
+    if (currentUrl === linkUrl) {
+      bestMatch = link;
+      longestMatchLength = linkUrl.length;
+    } else if (currentUrl.startsWith(linkUrl)) {
+      const isHomePage = linkUrl.endsWith('/') || linkUrl.endsWith('index.html') || linkUrl.endsWith('/en') || linkUrl.endsWith('/kn');
 
-            if (!isHomePage && linkUrl.length > longestMatchLength) {
-                bestMatch = link;
-                longestMatchLength = linkUrl.length;
-            }
-        }
+      if (!isHomePage && linkUrl.length > longestMatchLength) {
+        bestMatch = link;
+        longestMatchLength = linkUrl.length;
+      }
+    }
+  });
+
+  if (bestMatch) {
+    bestMatch.classList.add(activeClassName);
+    const parentMenu = bestMatch.closest(menuSelector);
+    if (parentMenu) parentMenu.classList.add(activeClassName);
+  } else {
+    const homeLink = Array.from(menuLinks).find(link => {
+      const lUrl = link.href.split(/[?#]/)[0];
+      return lUrl.endsWith('/') || lUrl.endsWith('index.html') || lUrl.endsWith('/en') || lUrl.endsWith('/kn');
     });
 
-    if (bestMatch) {
-        bestMatch.classList.add(activeClassName);
-        const parentMenu = bestMatch.closest(menuSelector);
-        if (parentMenu) parentMenu.classList.add(activeClassName);
-    } else {
-        const homeLink = Array.from(menuLinks).find(link => {
-            const lUrl = link.href.split(/[?#]/)[0];
-            return lUrl.endsWith('/') || lUrl.endsWith('index.html') || lUrl.endsWith('/en') || lUrl.endsWith('/kn');
-        });
-
-        if (homeLink) {
-            homeLink.classList.add(activeClassName);
-            const parentMenu = homeLink.closest(menuSelector);
-            if (parentMenu) parentMenu.classList.add(activeClassName);
-        }
+    if (homeLink) {
+      homeLink.classList.add(activeClassName);
+      const parentMenu = homeLink.closest(menuSelector);
+      if (parentMenu) parentMenu.classList.add(activeClassName);
     }
+  }
 }
 
 // ----------- Vùng gọi biến --------------
@@ -933,10 +927,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       },
       {
-        trigger: ".btn-hide",              
-        target: ".tab-panel__container",    
-        behavior: "toggle",                 
-        activeClass: "hide",                
+        trigger: ".btn-hide",
+        target: ".tab-panel__container",
+        behavior: "toggle",
+        activeClass: "hide",
         onActiveChange: function (isActive, triggerEl, targetEl) {
           if (isActive) {
             triggerEl.innerText = "Xem thêm";
