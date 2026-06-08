@@ -3,13 +3,13 @@
     <div class="container-l flex center-ver header-bar jus-sb">
         <div class="flex center-ver gap-10">
             <div class="top-menu__iconcontact flex center-ver gap-10">
-                <div class="top-menu__iconcontact-item flex gap-10 item-padding-10">
+                <div class="top-menu__icon contact-item flex gap-10 item-padding-10">
                     <div class="top-menu__iconcontact-icon flex center-ver center-hor">
                         <img class="img-icon" src="./img/icon/top-menu-phone.svg" alt="Phone">
                     </div>
                     <p class="text-color-white">0902 808 020 - 0908 700 809</p>
                 </div>
-                <div class="top-menu__iconcontact-item flex gap-10 item-padding-10">
+                <div class="top-menu__icon contact-item flex gap-10 item-padding-10">
                     <div class="top-menu__iconcontact-icon flex center-ver center-hor">
                         <img class="img-icon" src="./img/icon/top-menu-mail.svg" alt="Mail">
                     </div>
@@ -17,21 +17,21 @@
                 </div>
             </div>
         </div>
-        
-        <div class="flex center-ver gap-10">
-            <a href="#" class="flex center-ver center-hor border-radius-5 item-padding-5">
+
+        <div class="flex center-ver gap-10 top-menu__icon__function">
+            <a href="javascript:void(0)" class="flex center-ver center-hor border-radius-5 item-padding-5">
                 <img class="img-icon" src="./img/icon/top-menu-search.svg" alt="Search">
             </a>
-            <a href="#" class="flex center-ver center-hor border-radius-5 item-padding-5">
+            <a href="javascript:void(0)" class="flex center-ver center-hor border-radius-5 item-padding-5">
                 <img class="img-icon" src="./img/icon/top-menu-user.svg" alt="User">
             </a>
-            <a href="#" class="flex center-ver center-hor border-radius-5 item-padding-5">
+            <a href="javascript:void(0)" class="flex center-ver center-hor border-radius-5 item-padding-5">
                 <img class="img-icon" src="./img/icon/top-menu-location.svg" alt="Location">
             </a>
-            <a href="#" class="flex center-ver center-hor border-radius-5 item-padding-5">
+            <a href="javascript:void(0)" class="flex center-ver center-hor border-radius-5 item-padding-5">
                 <img class="img-icon" src="./img/icon/top-menu-land.svg" alt="Language">
             </a>
-            <a href="#" class="flex center-ver center-hor border-radius-5 item-padding-5">
+            <a href="javascript:void(0)" class="flex center-ver center-hor border-radius-5 item-padding-5">
                 <img class="img-icon" src="./img/icon/top-menu-shopping.svg" alt="Cart">
             </a>
         </div>
@@ -51,41 +51,50 @@
                 </a>
             </div>
             <div class="header-bottom__item flex center-ver gap-5">
-                <a class="text-color-white uppercase bold" href="#">Thương hiệu</a>
+                <a href="javascript:void(0)" class="text-color-white uppercase bold" href="javascript:void(0)">Thương hiệu</a>
             </div>
             <div class="header-bottom__item flex center-ver gap-5">
-                <a class="text-color-white uppercase bold" href="#">Nam</a>
+                <a href="javascript:void(0)" class="text-color-white uppercase bold" href="javascript:void(0)">Nam</a>
             </div>
             <div class="header-bottom__item flex center-ver gap-5">
-                <a class="text-color-white uppercase bold" href="#">Nữ</a>
+                <a href="javascript:void(0)" class="text-color-white uppercase bold" href="javascript:void(0)">Nữ</a>
             </div>
             <div class="header-bottom__item flex center-ver gap-5">
-                <a class="text-color-white uppercase bold" href="#">Cặp đôi</a>
+                <a href="javascript:void(0)" class="text-color-white uppercase bold" href="javascript:void(0)">Cặp đôi</a>
             </div>
             <div class="header-bottom__item flex center-ver gap-5">
-                <a class="text-color-white uppercase bold" href="#">Trẻ em</a>
+                <a href="javascript:void(0)" class="text-color-white uppercase bold" href="javascript:void(0)">Trẻ em</a>
             </div>
             <div class="header-bottom__item flex center-ver gap-5">
-                <a class="text-color-white uppercase bold" href="#">Treo tường & Để bàn</a>
+                <a href="javascript:void(0)" class="text-color-white uppercase bold" href="javascript:void(0)">Treo tường & Để bàn</a>
             </div>
             <div class="header-bottom__item flex center-ver gap-5">
-                <a class="text-color-white uppercase bold" href="#">Phụ kiện</a>
+                <a href="javascript:void(0)" class="text-color-white uppercase bold" href="javascript:void(0)">Phụ kiện</a>
             </div>
             <div class="header-bottom__item flex center-ver gap-5">
-                <a class="text-color-white uppercase bold" href="#">Trang sức</a>
+                <a href="javascript:void(0)" class="text-color-white uppercase bold" href="javascript:void(0)">Trang sức</a>
             </div>
             <div class="header-bottom__item">
-                <a class="text-color-white uppercase bold" href="#">Tin tức</a>
+                <a href="../news.html" class="text-color-white uppercase bold" href="javascript:void(0)">Tin tức</a>
             </div>
-            
+
+            <div class="header-search center-ver bg-white border-radius-5 overflow-hidden">
+                <input type="text" placeholder="Tìm kiếm sản phẩm..."
+                    class="border-none item-padding-10 text-sm flex-1">
+                <button type="submit"
+                    class="border-none bg-white cursor-pointer item-padding-10 flex center-ver center-hor">
+                    <img class="img-icon" src="./img/icon/top-menu-search-menu.svg" alt="Search">
+                </button>
+            </div>
+
             <!-- Nút Hamburger Menu -->
-            <button class="menu-container__bar center-ver">
+            <button class="menu-container__bar center-ver cursor-pointer">
                 <img class="img-icon" src="./img/icon/bars.svg" alt="Menu">
             </button>
         </div>
-        
+
         <!-- Menu Mobile -->
-        <div class="m-menu flex flex-col pos-abs bg-white">
+        <div class="m-menu flex flex-col pos-abs bg-white jus-sb">
             <div class="m-menu__root">
                 <div class="m-menu__item flex flex-col active">
                     <a href="javascript:void(0)" class="text-color-deactive bold uppercase">Trang chủ</a>
@@ -115,8 +124,22 @@
                     <a href="javascript:void(0)" class="text-color-deactive bold uppercase">Trang sức</a>
                 </div>
                 <div class="m-menu__item flex flex-col">
-                    <a href="javascript:void(0)" class="text-color-deactive bold uppercase">Tin tức</a>
+                    <a href="../news.html" class="text-color-deactive bold uppercase">Tin tức</a>
                 </div>
+            </div>
+            <div class="flex center-ver gap-10 item-padding-10 bg-primary right-hor"> 
+                <a href="javascript:void(0)" class="flex center-ver center-hor border-radius-5 item-padding-5">
+                    <img class="img-icon" src="./img/icon/top-menu-user.svg" alt="User">
+                </a>
+                <a href="javascript:void(0)" class="flex center-ver center-hor border-radius-5 item-padding-5">
+                    <img class="img-icon" src="./img/icon/top-menu-location.svg" alt="Location">
+                </a>
+                <a href="javascript:void(0)" class="flex center-ver center-hor border-radius-5 item-padding-5">
+                    <img class="img-icon" src="./img/icon/top-menu-land.svg" alt="Language">
+                </a>
+                <a href="javascript:void(0)" class="flex center-ver center-hor border-radius-5 item-padding-5">
+                    <img class="img-icon" src="./img/icon/top-menu-shopping.svg" alt="Cart">
+                </a>
             </div>
         </div>
     </div>

@@ -3,16 +3,23 @@
 .bg-white-secondary { background-color: var(--second-white-color); }
 .bg-deactive { background-color: var(--deactive-color); }
 .bg-black { background-color: var(--black-color); }
+.bg-gray { background-color: var(--gray-color); }
 .bg-red { background-color: var(--error-color); }
 .text-color-white { color: var(--white-color); }
 .text-color-deactive { color: var(--deactive-color); }
 .text-color-primary { color: var(--primary-color); }
+.text-color-black { color: var(--black-color); }
 .flex { display: flex; }
 .flex-col { flex-direction: column; }
 .flex-wrap { flex-wrap: wrap; }
 .flex-1 { flex-grow: 1; }
 .center-hor { justify-content: center; }
 .center-ver { align-items: center; }
+.left-hor { justify-content: flex-start; }
+.left-ver { align-items: flex-start; }
+.right-hor { justify-content: flex-end; }
+.right-ver { align-items: flex-end; }
+.shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
 .container-padding { padding: 60px 0px; }
 .container-padding-bottom { padding: 0px 0px 60px; }
 .item-padding-10 { padding: 10px; }
@@ -23,6 +30,7 @@
 .item-padding-20-30 { padding: 20px 30px; }
 .item-padding-20-40 { padding: 20px 40px; }
 .item-padding-80-0 { padding: 80px 0px; }
+.item-padding-60-0 { padding: 60px 0px; }
 .btn-padding{padding: 8px 24px;}
 .un-wrap { white-space: nowrap; }
 .img-icon,.img-content{ object-position: center; height: 100%; width: 100%; }

@@ -357,6 +357,7 @@ function renderDynamicList(headingData, targetSelector) {
 // 🧩 2️⃣ Hàm dùng chung cho tất cả Swiper
 function initSwiperSlider({
   mainSelector,
+  wrapperSelector = null, // MỚI: Thêm cái này để khoanh vùng nút bấm
   minSlides = 0,
   autoplay = false,
   spaceBetween = 0,
@@ -373,46 +374,72 @@ function initSwiperSlider({
   breakpoints = null,
   ...extraOptions
 }) {
-  const swiperContainer = document.querySelector(mainSelector);
-  if (!swiperContainer) {
-    // console.warn(`Swiper container not found for selector: ${mainSelector}`);
-    return;
-  }
-  if (loop && minSlides > 0) {
-    const wrapper = swiperContainer.querySelector('.swiper-wrapper');
-    if (wrapper) {
-      const slides = Array.from(wrapper.children);
-      let currentSlideCount = slides.length;
-      const requiredForLoop = slidesPerView > 1 ? slidesPerView * 2 : 3;
-      const actualMin = Math.max(minSlides, requiredForLoop);
-      if (currentSlideCount > 0 && currentSlideCount < actualMin) {
-        const multiplier = Math.ceil(actualMin / currentSlideCount) - 1;
+  // 1. Dùng querySelectorAll để gom TẤT CẢ các slider có class này
+  const swiperContainers = document.querySelectorAll(mainSelector);
+  
+  if (swiperContainers.length === 0) return;
 
-        for (let i = 0; i < multiplier; i++) {
-          slides.forEach(slide => {
-            wrapper.appendChild(slide.cloneNode(true));
-          });
+  // 2. Lặp qua từng cục Slider để xử lý độc lập
+  swiperContainers.forEach(swiperContainer => {
+    
+    // --- Tính năng Hack Loop của bồ (Giữ nguyên nhưng áp dụng cho TỪNG slider) ---
+    if (loop && minSlides > 0) {
+      const wrapper = swiperContainer.querySelector('.swiper-wrapper');
+      if (wrapper) {
+        const slides = Array.from(wrapper.children);
+        let currentSlideCount = slides.length;
+        const requiredForLoop = slidesPerView > 1 ? slidesPerView * 2 : 3;
+        const actualMin = Math.max(minSlides, requiredForLoop);
+        if (currentSlideCount > 0 && currentSlideCount < actualMin) {
+          const multiplier = Math.ceil(actualMin / currentSlideCount) - 1;
+          for (let i = 0; i < multiplier; i++) {
+            slides.forEach(slide => {
+              wrapper.appendChild(slide.cloneNode(true));
+            });
+          }
         }
       }
     }
-  }
 
-  const swiperOptions = {
-    slidesPerView: slidesPerView,
-    spaceBetween: spaceBetween,
-    loop: loop,
-    autoplay: autoplay ? {
-      delay: typeof autoplay === 'number' ? autoplay : 2500,
-      disableOnInteraction: false,
-      ...(typeof autoplay === 'object' ? autoplay : {})
-    } : false,
-    navigation: navigation.nextEl || navigation.prevEl ? navigation : false,
-    pagination: pagination.el ? pagination : false,
-    breakpoints: breakpoints,
-    ...extraOptions
-  };
+    // --- MỚI: KHOANH VÙNG NÚT NEXT/PREV & PAGINATION ---
+    // Tìm thẻ bọc ngoài cùng của cụm slider này. Nếu không truyền wrapperSelector thì lấy thẻ cha trực tiếp.
+    const scopeElement = wrapperSelector ? swiperContainer.closest(wrapperSelector) : swiperContainer.parentElement;
 
-  new Swiper(swiperContainer, swiperOptions);
+    let scopedNav = false;
+    if (navigation && (navigation.nextEl || navigation.prevEl)) {
+      // Ép Swiper tìm đúng cái nút bấm nằm TRONG cục wrapper này thôi
+      scopedNav = {
+        nextEl: scopeElement ? scopeElement.querySelector(navigation.nextEl) : navigation.nextEl,
+        prevEl: scopeElement ? scopeElement.querySelector(navigation.prevEl) : navigation.prevEl,
+      };
+    }
+
+    let scopedPag = false;
+    if (pagination && pagination.el) {
+      scopedPag = {
+        ...pagination,
+        el: scopeElement ? scopeElement.querySelector(pagination.el) : pagination.el,
+      };
+    }
+
+    // 3. Khởi tạo Swiper
+    const swiperOptions = {
+      slidesPerView: slidesPerView,
+      spaceBetween: spaceBetween,
+      loop: loop,
+      autoplay: autoplay ? {
+        delay: typeof autoplay === 'number' ? autoplay : 2500,
+        disableOnInteraction: false,
+        ...(typeof autoplay === 'object' ? autoplay : {})
+      } : false,
+      navigation: scopedNav,   // Nhét cục nav đã khoanh vùng vào
+      pagination: scopedPag,   // Nhét cục pag đã khoanh vùng vào
+      breakpoints: breakpoints,
+      ...extraOptions
+    };
+
+    new Swiper(swiperContainer, swiperOptions);
+  });
 }
 
 // js roll to top
@@ -559,6 +586,34 @@ function initUniversalActiveMenu(menuSelector = '', activeClassName = 'active') 
   }
 }
 
+function initStarRating(containerSelector = '.rate-stars', starSelector = '.star', activeClass = 'active') {
+  const containers = document.querySelectorAll(containerSelector);
+  if (!containers.length) return;
+  containers.forEach(container => {
+    const stars = Array.from(container.querySelectorAll(starSelector));
+    if (!stars.length) return;
+    const defaultActiveCount = container.querySelectorAll(`.${activeClass}`).length;
+    container.dataset.rating = defaultActiveCount || 0;
+    stars.forEach((star, index) => {
+      if (star.dataset._ratingBound === "true") return;
+      star.dataset._ratingBound = "true";
+      star.style.cursor = 'pointer';
+      star.addEventListener('click', () => {
+        const currentRating = index + 1;
+        container.dataset.rating = currentRating;
+        stars.forEach((s, i) => {
+          if (i < currentRating) {
+            s.classList.add(activeClass);
+          } else {
+            s.classList.remove(activeClass);
+          }
+        });
+
+      });
+    });
+  });
+}
+
 // ----------- Vùng gọi biến --------------
 document.addEventListener("DOMContentLoaded", () => {
   includeHTML(() => {
@@ -581,13 +636,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initSwiperSlider({
       mainSelector: '.project-swiper',
+      wrapperSelector: '.project-slider-wrapper',
       slidesPerView: 3,
       spaceBetween: 20,
+      autoplay: false,
       loop: true,
       minSlides: 6,
-      autoplay: {
-        delay: 3000,
-      },
+      // autoplay: {
+      //   delay: 3000,
+      // },
       pagination: {
         el: '.custom-dots',
       },
@@ -825,15 +882,15 @@ document.addEventListener("DOMContentLoaded", () => {
         nextEl: '.logo-brand-wrapper .swiper-button-next',
         prevEl: '.logo-brand-wrapper .swiper-button-prev',
       },
-      pagination: {
-        el: '.logo-brand__swiper .swiper-pagination',
-        clickable: true,
-      },
+      // pagination: {
+      //   el: '.logo-brand__swiper .swiper-pagination',
+      //   clickable: true,
+      // },
       breakpoints: {
         1200: {
           slidesPerView: 5,
           grid: {
-            rows: 3,
+            rows: 2,
             fill: 'row'
           },
         },
@@ -881,6 +938,11 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       {
         trigger: ".page-btn",
+        behavior: "activate",
+        activeClass: "active",
+      },
+      {
+        trigger: ".filter-btn ",
         behavior: "activate",
         activeClass: "active",
       },
@@ -947,7 +1009,8 @@ document.addEventListener("DOMContentLoaded", () => {
     applyImageEnhancements();
     initRevealEffect();
     initFormValidation();
-    initUniversalActiveMenu('.header-bottom__item', 'active')
+    initUniversalActiveMenu('.header-bottom__item', 'active');
+    initStarRating('.popup-comment__content .rate-stars', '.star', 'active');
   });
 });
 

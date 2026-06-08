@@ -1,4 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+
 /* css header */
+
+:root {
+    /* Định nghĩa font-size-base ở đây. Sử dụng rem để dễ dàng responsive. */
+    --font-size-base: 1rem; /* Mặc định 16px */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Đặt font chữ chính cho toàn bộ trang */
+}
 
 .logo img {
     aspect-ratio: 164 / 42;
@@ -29,7 +40,7 @@
 }
 
 .slide-container {
-    aspect-ratio: 1920 / 807;
+    aspect-ratio: 1920 / 600;
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -67,10 +78,14 @@
     border: none;
     border-radius: 5px;
     height: auto;
-    cursor: pointer;
     padding: 10px;
     display: none;
     padding: 15px;
+}
+
+.header-search {
+    display: none;
+    max-width: 200px;
 }
 
 .menu-item__exception {
@@ -126,7 +141,7 @@
 
 .m-menu.active {
     max-height: 2000px;
-    padding: 20px 0px;
+    padding: 20px 0px 0px;
     opacity: 1;
 }
 
@@ -356,35 +371,35 @@
 /* Trạng thái ẩn ban đầu */
 
 section.hidden-section {
-    opacity: 1; 
+    opacity: 1;
     transform: none;
     filter: none;
 }
 
-section.hidden-section > div > div {
+section.hidden-section>div>div {
     opacity: 0;
     filter: blur(6px);
     transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-                filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform, filter;
 }
 
-section.hidden-section > div > div:nth-child(1) {
+section.hidden-section>div>div:nth-child(1) {
     transform: translateY(-40px) scale(0.95);
 }
 
-section.hidden-section > div > div:nth-child(2) {
+section.hidden-section>div>div:nth-child(2) {
     transform: translateY(60px);
-    transition-delay: 0.15s; 
+    transition-delay: 0.15s;
 }
 
-section.hidden-section > div > div:nth-child(n+3) {
+section.hidden-section>div>div:nth-child(n+3) {
     transform: translateX(-50px);
     transition-delay: 0.3s;
 }
 
-section.hidden-section.show-up > div > div {
+section.hidden-section.show-up>div>div {
     opacity: 1;
     transform: translate(0) scale(1);
     filter: blur(0);
@@ -394,11 +409,11 @@ section.hidden-section.show-up > div > div {
 footer.hidden-section {
     opacity: 0;
     transform: translateY(100px) rotateX(-20deg);
-    transform-origin: top center; 
+    transform-origin: top center;
     filter: blur(20px);
     transition: opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 1.5s cubic-bezier(0.22, 1, 0.36, 1),
-                filter 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+        transform 1.5s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.5s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: transform, opacity, filter;
 }
 
@@ -480,6 +495,54 @@ footer.hidden-section.show-up {
 /* css trang lien hệ */
 
 /* css index */
+
+.project-item {}
+
+.project-item__img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+}
+
+.product-badge {
+    padding: 4px 8px;
+    top: 5px;
+    left: 5px;
+    font-size: calc(var(--font-size-base) - 4px);
+}
+
+.product-tag__container{
+    min-height: 44px;
+    display:none;
+}
+
+.product-tag__container.active {
+    display: flex !important; 
+}
+
+.product-img {}
+
+.project-item__content {}
+
+.product-tag {
+    padding: 4px 8px;
+    height: fit-content;
+}
+
+.text-price {
+    font-size: calc(var(--font-size-base) + 2px);
+}
+
+.text-strike {
+    text-decoration: line-through;
+    font-size: calc(var(--font-size-base) - 4px);
+}
+
+.btn-cart {
+    border: 1px solid var(--black-color);
+}
+
+.btn-cart-icon {}
 
 /* Swiper navigation buttons for service-list */
 .swiper-button-next,
@@ -649,6 +712,11 @@ footer.hidden-section.show-up {
     padding-bottom: 30px;
 }
 
+.footer-contect__item{
+    aspect-ratio: 1 / 1;
+    width: 38px;
+}
+
 .footer-top__container {}
 
 .footer-menu__container,
@@ -815,7 +883,7 @@ footer.hidden-section.show-up {
 }
 
 .home-banner__title {
-    font-size: calc(var(--font-size-base) + 32px);
+    font-size: calc(var(--font-size-base) + 22px);
 }
 
 .home-banner__desc {
@@ -823,7 +891,7 @@ footer.hidden-section.show-up {
 }
 
 .home-banner__blending {
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 .home-banner__blending,
@@ -1020,6 +1088,39 @@ footer.hidden-section.show-up {
     background-size: cover;
 }
 
+.intro-container{
+    gap: 64px;
+}
+
+.intro-item {
+    width: calc(50% - 32px);
+    height: auto;
+}
+
+.intro-vision__container h2,
+.intro-item h1{
+    font-size: calc(var(--font-size-base) + 16px);
+}
+
+.intro-vision__icon{
+    aspect-ratio: 1 / 1;
+    max-width: 41px;
+}
+
+.intro-vision__item ul{
+    margin-left: 20px;
+}
+
+.intro-vision__item p,
+.intro-vision__item ul li{
+    font-size: calc(var(--font-size-base) - 2px);
+}
+
+.intro-image__container{
+    height: auto;
+    aspect-ratio: 668 / 416;
+}
+
 .intro-background {
     background-position: left;
     background-image: url(../img/banner-blending/background-intro.png);
@@ -1075,7 +1176,12 @@ footer.hidden-section.show-up {
 
 .section-title h1,
 .section-title h2 {
-    font-size: calc(var(--font-size-base) + 8px);
+    font-size: calc(var(--font-size-base) + 16px);
+}
+
+.section-desc{
+    font-size: calc(var(--font-size-base) + 2px);
+    max-width: 700px;
 }
 
 .service-content {}
@@ -1276,16 +1382,16 @@ footer.hidden-section.show-up {
     font-size: var(--font-size-base);
 }
 
-.tab-panel{
+.tab-panel {
     display: none;
 }
 
-.tab-panel.active{
+.tab-panel.active {
     display: block;
 }
 
 .tab-panel__container {
-    max-height: 4000px; 
+    max-height: 4000px;
     transition: max-height 0.4s ease-in-out;
     overflow: hidden;
 }
@@ -1301,7 +1407,7 @@ footer.hidden-section.show-up {
     list-style: none;
 }
 
-.tab-panel ul li p{
+.tab-panel ul li p {
     font-size: var(--font-size-base);
 }
 
@@ -1429,6 +1535,14 @@ footer.hidden-section.show-up {
     transition: all 0.5s ease-in-out;
 }
 
+.filter-btn.active{
+    background-color: var(--primary-color);
+}
+
+.filter-btn.active p{
+    color: var(--white-color);
+}
+
 .filter-btn:hover {
     border: 1px solid var(--primary-color)
 }
@@ -1470,6 +1584,10 @@ footer.hidden-section.show-up {
     aspect-ratio: 4 / 3;
     border-radius: 5px;
     margin-bottom: 10px;
+}
+
+.popup-comment__content .rate-stars {
+    font-size: calc(var(--font-size-base) + 40px);
 }
 
 
