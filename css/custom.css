@@ -1555,16 +1555,16 @@ footer.hidden-section.show-up {
 
 }
 
-.price-filter__btn{
+.price-filter__btn {
     border: 1px solid var(--primary-color);
     transition: all 0.5s ease-in-out;
 }
 
-.btn-setting{
+.btn-setting {
     display: none;
 }
 
-.allproduct-top__filter{
+.allproduct-top__filter {
     justify-content: end;
 }
 

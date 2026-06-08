@@ -29,33 +29,38 @@
             </div>
         </section>
         <section class="container-f flex center-ver container-padding">
-            <div class="auth-section container-xxs flex flex-col gap-10 center-ver" id="section-login">
-                <div class="auth-section__logo">
+            <div class="dh24h-register-wrapper container-xxs flex flex-col gap-10 center-ver" id="section-login">
+
+                <div class="dh24h-register-logo">
                     <img src="./img/logo/logo-top.webp" alt="Logo">
                 </div>
 
-                <h3 class="auth-title">Đăng nhập tài khoản</h3>
-                <p class="auth-desc">Vui lòng nhập thông tin đăng nhập</p>
+                <h3 class="dh24h-register-title">Đăng nhập tài khoản</h3>
+
+                <p class="dh24h-register-desc">Vui lòng nhập thông tin đăng nhập</p>
 
                 <form class="js-validate-form flex flex-col gap-20" data-form="login">
 
                     <p>Tài khoản</p>
-                    <div class="form-group flex">
+                    <div class="dh24h-register-form-group flex">
                         <input type="text" name="username" placeholder="Tài khoản" required autocomplete="username"
                             data-msg="Vui lòng nhập tài khoản">
                         <small class="error-msg"></small>
                     </div>
 
                     <p>Mật khẩu</p>
-                    <div class="form-group flex">
+                    <div class="dh24h-register-form-group flex">
                         <input type="password" name="password" placeholder="Mật khẩu" required minlength="6"
                             autocomplete="current-password" data-msg="Mật khẩu tối thiểu 6 ký tự">
                         <small class="error-msg"></small>
                     </div>
-                    <div class="forget-pass__container flex right-hor">
+
+                    <div class="dh24h-register-forget-pass flex right-hor">
                         <a href="../forgetpass.html" class="cursor-pointer">Quên mật khẩu</a>
                     </div>
+
                     <button type="submit">Đăng nhập</button>
+
                     <p class="text-center">Bạn có tài khoản chưa? <u><a href="./signin.html">Đăng ký ngay</a></u></p>
                 </form>
             </div>
