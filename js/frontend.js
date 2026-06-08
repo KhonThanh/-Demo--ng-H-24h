@@ -376,12 +376,12 @@ function initSwiperSlider({
 }) {
   // 1. Dùng querySelectorAll để gom TẤT CẢ các slider có class này
   const swiperContainers = document.querySelectorAll(mainSelector);
-  
+
   if (swiperContainers.length === 0) return;
 
   // 2. Lặp qua từng cục Slider để xử lý độc lập
   swiperContainers.forEach(swiperContainer => {
-    
+
     // --- Tính năng Hack Loop của bồ (Giữ nguyên nhưng áp dụng cho TỪNG slider) ---
     if (loop && minSlides > 0) {
       const wrapper = swiperContainer.querySelector('.swiper-wrapper');
@@ -822,6 +822,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     initSwiperSlider({
+      mainSelector: '.product-thumb-swiper',
+      slidesPerView: 4,        
+      spaceBetween: 10,       
+      watchSlidesProgress: true 
+    });
+
+    initSwiperSlider({
+      mainSelector: '.product-main-swiper',
+      slidesPerView: 1,
+      spaceBetween: 0,
+      thumbs: {
+        swiper: '.product-thumb-swiper'
+      }
+    });
+
+    initSwiperSlider({
       mainSelector: '.service-list',
       minSlides: 0,
       loop: true,
@@ -901,7 +917,7 @@ document.addEventListener("DOMContentLoaded", () => {
             fill: 'row'
           },
         },
-        500: {
+        300: {
           slidesPerView: 4,
           grid: {
             rows: 2,
