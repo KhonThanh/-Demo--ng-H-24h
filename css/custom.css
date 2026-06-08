@@ -4,11 +4,13 @@
 
 :root {
     /* Định nghĩa font-size-base ở đây. Sử dụng rem để dễ dàng responsive. */
-    --font-size-base: 1rem; /* Mặc định 16px */
+    --font-size-base: 1rem;
+    /* Mặc định 16px */
 }
 
 body {
-    font-family: 'Roboto', sans-serif; /* Đặt font chữ chính cho toàn bộ trang */
+    font-family: 'Roboto', sans-serif;
+    /* Đặt font chữ chính cho toàn bộ trang */
 }
 
 .logo img {
@@ -492,11 +494,17 @@ footer.hidden-section.show-up {
     background-repeat: no-repeat;
 }
 
-/* css trang lien hệ */
+/* css trang sản phẩm */
+.sidebar-filter {
+    width: calc(16.666% - (var(--gap) * 10 / 12));
+    transition: transform 0.3s ease-in-out;
+}
+
+.allproduct-container {
+    width: calc(83.333% - (var(--gap) * 2 / 12));
+}
 
 /* css index */
-
-.project-item {}
 
 .project-item__img {
     aspect-ratio: 1 / 1;
@@ -511,13 +519,13 @@ footer.hidden-section.show-up {
     font-size: calc(var(--font-size-base) - 4px);
 }
 
-.product-tag__container{
+.product-tag__container {
     min-height: 44px;
-    display:none;
+    display: none;
 }
 
 .product-tag__container.active {
-    display: flex !important; 
+    display: flex !important;
 }
 
 .product-img {}
@@ -712,7 +720,7 @@ footer.hidden-section.show-up {
     padding-bottom: 30px;
 }
 
-.footer-contect__item{
+.footer-contect__item {
     aspect-ratio: 1 / 1;
     width: 38px;
 }
@@ -983,6 +991,7 @@ footer.hidden-section.show-up {
     overflow: hidden;
     border: 1px solid transparent;
     transition: all 0.6s ease;
+    height: 100%;
 }
 
 .project-item:hover {
@@ -991,6 +1000,11 @@ footer.hidden-section.show-up {
 
 .project-item__content p {
     -webkit-line-clamp: 3;
+}
+
+.project-item__content h3 {
+    -webkit-line-clamp: 2;
+    font-size: var(--font-size-base);
 }
 
 .news-btn,
@@ -1088,7 +1102,7 @@ footer.hidden-section.show-up {
     background-size: cover;
 }
 
-.intro-container{
+.intro-container {
     gap: 64px;
 }
 
@@ -1098,25 +1112,25 @@ footer.hidden-section.show-up {
 }
 
 .intro-vision__container h2,
-.intro-item h1{
+.intro-item h1 {
     font-size: calc(var(--font-size-base) + 16px);
 }
 
-.intro-vision__icon{
+.intro-vision__icon {
     aspect-ratio: 1 / 1;
     max-width: 41px;
 }
 
-.intro-vision__item ul{
+.intro-vision__item ul {
     margin-left: 20px;
 }
 
 .intro-vision__item p,
-.intro-vision__item ul li{
+.intro-vision__item ul li {
     font-size: calc(var(--font-size-base) - 2px);
 }
 
-.intro-image__container{
+.intro-image__container {
     height: auto;
     aspect-ratio: 668 / 416;
 }
@@ -1179,7 +1193,7 @@ footer.hidden-section.show-up {
     font-size: calc(var(--font-size-base) + 16px);
 }
 
-.section-desc{
+.section-desc {
     font-size: calc(var(--font-size-base) + 2px);
     max-width: 700px;
 }
@@ -1423,7 +1437,7 @@ footer.hidden-section.show-up {
     position: absolute;
     width: 20px;
     height: 20px;
-    background-image: url('../img/icon/check-orange.svg');
+    background-image: url('../img/icon/check-circle.svg');
 
     background-size: contain;
     background-repeat: no-repeat;
@@ -1535,11 +1549,26 @@ footer.hidden-section.show-up {
     transition: all 0.5s ease-in-out;
 }
 
-.filter-btn.active{
+.filter-btn.active {
     background-color: var(--primary-color);
+    color: var(--white-color);
+
 }
 
-.filter-btn.active p{
+.price-filter__btn{
+    border: 1px solid var(--primary-color);
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-setting{
+    display: none;
+}
+
+.allproduct-top__filter{
+    justify-content: end;
+}
+
+.filter-btn.active p {
     color: var(--white-color);
 }
 

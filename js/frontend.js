@@ -902,7 +902,7 @@ document.addEventListener("DOMContentLoaded", () => {
           },
         },
         500: {
-          slidesPerView: 2,
+          slidesPerView: 4,
           grid: {
             rows: 2,
             fill: 'row'
@@ -945,6 +945,14 @@ document.addEventListener("DOMContentLoaded", () => {
         trigger: ".filter-btn ",
         behavior: "activate",
         activeClass: "active",
+      },
+      {
+        trigger: ".btn-setting ",
+        target: ".sidebar-filter",
+        behavior: "activate",
+        activeClass: "active",
+        closeOnOutside: true,
+        closeOnEsc: true,
       },
       {
         trigger: ".btn-register__cal",

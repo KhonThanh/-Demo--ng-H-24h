@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồng Hồ 24h | Sản phẩm</title>
+    <link rel="icon" type="image/png" href="./img/logo/logo-favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="preload" as="image" href="./img/banner/banner-home.webp">
+    <!-- <link rel="stylesheet" href="../css/style.min.css"> -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/utility.css">
+</head>
+
+<body>
+    <header class="container-f bg-black " data-include="./component/header.html"></header>
+    <main class="container-f flex flex-col center-hor pos-rel">
+        <section class="flex bg-gray container-f">
+            <div class="container-l nav-bar__container">
+                <a href="./index.html" class="nav-bar__item">Trang chủ</a>
+                <a href="./service-detail.html" class="nav-bar__item">Danh sách sản phẩm</a>
+            </div>
+        </section>
+        <section class="container-f item-padding-40">
+            <div class="container-l flex gap-30">
+
+                <aside class="sidebar-filter flex flex-col gap-30">
+
+                    <div class="filter-group flex flex-col gap-10">
+                        <h3 class="bold uppercase">Kiểu dáng</h3>
+                        <div class="title-border-bottom"></div>
+                        <div class="flex flex-col gap-10 mt-10">
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Đồng Hồ Cặp (1643)</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Đồng Hồ Nữ Chính Hãng (5248)</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Đồng Hồ Nam Chính Hãng (6552)</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Đồng Hồ Trẻ Em</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group flex flex-col gap-10">
+                        <h3 class="bold uppercase">Chất liệu dây</h3>
+                        <div class="title-border-bottom"></div>
+                        <div class="flex flex-col gap-10 mt-10">
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Dây Kim Loại</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Dây Da</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Dây Nhựa | Cao Su</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Dây Titanium</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Dây Vải</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Dây Đá / Khoáng</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Vỏ Đá Ceramic</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Dây Gỗ</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group flex flex-col gap-10">
+                        <h3 class="bold uppercase">Chất liệu vỏ</h3>
+                        <div class="title-border-bottom"></div>
+                        <div class="flex flex-col gap-10 mt-10">
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Vỏ Kim Loại</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Vỏ Gỗ</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Vỏ Nhựa / Cao Su</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Vỏ Titanium</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Vỏ Đá Ceramic</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Vỏ Nhựa / Thép</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Vỏ Carbon</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group flex flex-col gap-10">
+                        <h3 class="bold uppercase">Loại Kính</h3>
+                        <div class="title-border-bottom"></div>
+                        <div class="flex flex-col gap-10 mt-10">
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Kính cứng (3443)</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Kính Sapphire (238)</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Kính đặc biệt (224)</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Kính khoáng(Mineral Glass) (4874)</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Kính nhựa (Resin Glass) (1302)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group flex flex-col gap-10">
+                        <h3 class="bold uppercase">Máy & Năng Lượng</h3>
+                        <div class="title-border-bottom"></div>
+                        <div class="flex flex-col gap-10 mt-10">
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Quartz (Pin)</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Automatic (Cơ)</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Solar-Eco-Drive (Năng Lượng Mặt Trời)</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Kinetic (Vừa Pin - Vừa Tự Động)</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Quartz (Pin 10 Năm)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group flex flex-col gap-10">
+                        <h3 class="bold uppercase">Màu Mặt Số</h3>
+                        <div class="title-border-bottom"></div>
+                        <div class="flex flex-col gap-10 mt-10">
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Đen</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Xanh</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Đỏ</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Cam</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Tím</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Open Heart</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Hồng</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Nâu</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Trắng</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Vàng</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Xám</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Xà Cừ</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Hột</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Khác</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group flex flex-col gap-10">
+                        <h3 class="bold uppercase">Hình Mặt Số</h3>
+                        <div class="title-border-bottom"></div>
+                        <div class="flex flex-col gap-10 mt-10">
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Tròn</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Chữ Nhật</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Vuông</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Đặc Biệt</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Ô Van</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Bát Giác</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group flex flex-col gap-10">
+                        <h3 class="bold uppercase">Mức Chống Nước</h3>
+                        <div class="title-border-bottom"></div>
+                        <div class="flex flex-col gap-10 mt-10">
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">3Bar (Rửa Tay, Đi Mưa Nhỏ)</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">5Bar (Đi Mưa Đi Tắm)</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">10Bar (Đi Bơi, Lặn Nông)</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">20Bar (Lặn Biển)</span>
+                            </label>
+                            <label class="flex gap-10 center-ver cursor-pointer">
+                                <input type="checkbox" class="custom-checkbox">
+                                <span class="text-color-deactive">Diver's 200 or 300 (Lặn Sâu)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                </aside>
+
+                <div class="allproduct-container flex-1 flex flex-col gap-20">
+
+                    <div class="flex allproduct-top__filter center-ver flex-wrap gap-20">
+                        <div class="bg-white center-ver center-hor btn-setting">
+                            <img src="./img/icon/filter-btn.svg" alt="Lọc" class="img-icon">
+                        </div>
+                        <div class="flex gap-20 center-ver">
+                            <select
+                                class="text-xs bold uppercase text-color-deactive cursor-pointer border-none bg-white outline-none">
+                                <option value="18">Xem 18 sản phẩm</option>
+                                <option value="36">Xem 36 sản phẩm</option>
+                                <option value="72">Xem 72 sản phẩm</option>
+                                <option value="all">Xem tất cả</option>
+                            </select>
+
+                            <select
+                                class="text-xs bold uppercase text-color-deactive cursor-pointer border-none bg-white outline-none">
+                                <option value="newest">Sắp xếp: Mới nhất</option>
+                                <option value="price_asc">Giá: Thấp đến cao</option>
+                                <option value="price_desc">Giá: Cao xuống thấp</option>
+                                <option value="bestseller">Bán chạy nhất</option>
+                                <option value="viewed">Xem nhiều nhất</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="flex gap-20 center-ver">
+                        <div
+                            class="uppercase cursor-pointer price-filter__btn border-radius-5 filter-btn text-color-black item-padding-5-20 active">
+                            DƯỚI 1 TRIỆU</div>
+                        <div
+                            class="uppercase cursor-pointer price-filter__btn border-radius-5 filter-btn text-color-black item-padding-5-20">
+                            2 TRIỆU - 4 TRIỆU</div>
+                        <div
+                            class="uppercase cursor-pointer price-filter__btn border-radius-5 filter-btn text-color-black item-padding-5-20">
+                            4 TRIỆU - 6 TRIỆU</div>
+                        <div
+                            class="uppercase cursor-pointer price-filter__btn border-radius-5 filter-btn text-color-black item-padding-5-20">
+                            TRÊN 6 TRIỆU</div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-20">
+
+                        <article class="col-4">
+                            <div
+                                class="project-item jus-sb bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10 h-full">
+                                <a href="../product-detail.html" class="pos-abs cover-all z-index-1"
+                                    aria-label="Đồng hồ Casio"></a>
+
+                                <div class="flex flex-col gap-10 flex-1">
+                                    <div
+                                        class="project-item__img-container item-padding-30 pos-rel border-radius-5 overflow-hidden bg-white-secondary flex center-ver center-hor">
+                                        <div
+                                            class="product-badge border-radius-5 pos-abs bg-red text-color-white text-xs bold z-index-2">
+                                            -20%</div>
+                                        <div class="project-item__img fill-view">
+                                            <img src="./img/product/CASIO A158WEA-1DF.svg" alt="Casio A158WEA-1DF"
+                                                class="img-icon product-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item__content flex flex-col gap-10">
+                                        <p class="text-color-deactive text-xs uppercase bold">CASIO</p>
+                                        <h3 class="bold clamp-text ">Đồng hồ Casio A158WEA-1DF</h3>
+                                        <div class="flex gap-5 flex-wrap product-tag__container active">
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Unisex</span>
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Quartz
+                                                (Pin)</span>
+                                            <span class="text-xs bg-white-secondary text-color-deactive product-tag">Dây
+                                                Kim Loại</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex jus-sb center-ver mt-5">
+                                    <div class="flex flex-col gap-2">
+                                        <span class="bold text-red text-price">10.209.600 đ</span>
+                                        <span class="text-color-deactive text-strike text-xs">13.512.000 đ</span>
+                                    </div>
+                                    <button
+                                        class="flex center-ver center-hor item-padding-10 bg-white cursor-pointer border-radius-5 btn-cart z-index-2 pos-rel">
+                                        <img src="./img/icon/cart-plus.svg" alt="Add to cart"
+                                            class="img-icon btn-cart-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="col-4">
+                            <div
+                                class="project-item jus-sb bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10 h-full">
+                                <a href="../product-detail.html" class="pos-abs cover-all z-index-1"
+                                    aria-label="Đồng hồ Orient"></a>
+
+                                <div class="flex flex-col gap-10 flex-1">
+                                    <div
+                                        class="project-item__img-container item-padding-30 pos-rel border-radius-5 overflow-hidden bg-white-secondary flex center-ver center-hor">
+                                        <div
+                                            class="product-badge border-radius-5 pos-abs bg-red text-color-white text-xs bold z-index-2">
+                                            -20%</div>
+                                        <div class="project-item__img fill-view">
+                                            <img src="./img/product/CASIO A158WEA-1DF.svg" alt="Orient"
+                                                class="img-icon product-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item__content flex flex-col gap-10">
+                                        <p class="text-color-deactive text-xs uppercase bold">ORIENT</p>
+                                        <h3 class="bold clamp-text ">Orient FAC0000DD0</h3>
+                                        <div class="flex gap-5 flex-wrap product-tag__container active">
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Nam</span>
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Automatic</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex jus-sb center-ver mt-5">
+                                    <div class="flex flex-col gap-2">
+                                        <span class="bold text-red text-price">14.500.000 đ</span>
+                                        <span class="text-color-deactive text-strike text-xs">18.000.000 đ</span>
+                                    </div>
+                                    <button
+                                        class="flex center-ver center-hor item-padding-10 bg-white cursor-pointer border-radius-5 btn-cart z-index-2 pos-rel">
+                                        <img src="./img/icon/cart-plus.svg" alt="Add to cart"
+                                            class="img-icon btn-cart-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="col-4">
+                            <div
+                                class="project-item jus-sb bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10 h-full">
+                                <a href="../product-detail.html" class="pos-abs cover-all z-index-1"
+                                    aria-label="Đồng hồ Seiko"></a>
+
+                                <div class="flex flex-col gap-10 flex-1">
+                                    <div
+                                        class="project-item__img-container item-padding-30 pos-rel border-radius-5 overflow-hidden bg-white-secondary flex center-ver center-hor">
+                                        <div
+                                            class="product-badge border-radius-5 pos-abs bg-red text-color-white text-xs bold z-index-2">
+                                            -15%</div>
+                                        <div class="project-item__img fill-view">
+                                            <img src="./img/product/CASIO A158WEA-1DF.svg" alt="Seiko"
+                                                class="img-icon product-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item__content flex flex-col gap-10">
+                                        <p class="text-color-deactive text-xs uppercase bold">SEIKO</p>
+                                        <h3 class="bold clamp-text ">Đồng hồ Seiko 5 Sports SBSA005</h3>
+                                        <div class="flex gap-5 flex-wrap product-tag__container active">
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Nam</span>
+                                            <span class="text-xs bg-white-secondary text-color-deactive product-tag">Cơ
+                                                Tự Động</span>
+                                            <span class="text-xs bg-white-secondary text-color-deactive product-tag">Dây
+                                                Thép</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex jus-sb center-ver mt-5">
+                                    <div class="flex flex-col gap-2">
+                                        <span class="bold text-red text-price">8.900.000 đ</span>
+                                        <span class="text-color-deactive text-strike text-xs">10.500.000 đ</span>
+                                    </div>
+                                    <button
+                                        class="flex center-ver center-hor item-padding-10 bg-white cursor-pointer border-radius-5 btn-cart z-index-2 pos-rel">
+                                        <img src="./img/icon/cart-plus.svg" alt="Add to cart"
+                                            class="img-icon btn-cart-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="col-4">
+                            <div
+                                class="project-item jus-sb bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10 h-full">
+                                <a href="../product-detail.html" class="pos-abs cover-all z-index-1"
+                                    aria-label="Đồng hồ Citizen"></a>
+
+                                <div class="flex flex-col gap-10 flex-1">
+                                    <div
+                                        class="project-item__img-container item-padding-30 pos-rel border-radius-5 overflow-hidden bg-white-secondary flex center-ver center-hor">
+                                        <div
+                                            class="product-badge border-radius-5 pos-abs bg-red text-color-white text-xs bold z-index-2">
+                                            -25%</div>
+                                        <div class="project-item__img fill-view">
+                                            <img src="./img/product/CASIO A158WEA-1DF.svg" alt="Citizen"
+                                                class="img-icon product-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item__content flex flex-col gap-10">
+                                        <p class="text-color-deactive text-xs uppercase bold">CITIZEN</p>
+                                        <h3 class="bold clamp-text ">Đồng hồ Citizen Eco-Drive Năng Lượng Mặt Trời
+                                            Chronograph CA4011-54H</h3>
+                                        <div class="flex gap-5 flex-wrap product-tag__container active">
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Nam</span>
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Eco-Drive</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex jus-sb center-ver mt-5">
+                                    <div class="flex flex-col gap-2">
+                                        <span class="bold text-red text-price">12.200.000 đ</span>
+                                        <span class="text-color-deactive text-strike text-xs">16.300.000 đ</span>
+                                    </div>
+                                    <button
+                                        class="flex center-ver center-hor item-padding-10 bg-white cursor-pointer border-radius-5 btn-cart z-index-2 pos-rel">
+                                        <img src="./img/icon/cart-plus.svg" alt="Add to cart"
+                                            class="img-icon btn-cart-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="col-4">
+                            <div
+                                class="project-item jus-sb bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10 h-full">
+                                <a href="../product-detail.html" class="pos-abs cover-all z-index-1"
+                                    aria-label="Đồng hồ Casio"></a>
+
+                                <div class="flex flex-col gap-10 flex-1">
+                                    <div
+                                        class="project-item__img-container item-padding-30 pos-rel border-radius-5 overflow-hidden bg-white-secondary flex center-ver center-hor">
+                                        <div
+                                            class="product-badge border-radius-5 pos-abs bg-red text-color-white text-xs bold z-index-2">
+                                            -20%</div>
+                                        <div class="project-item__img fill-view">
+                                            <img src="./img/product/CASIO A158WEA-1DF.svg" alt="Casio A158WEA-1DF"
+                                                class="img-icon product-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item__content flex flex-col gap-10">
+                                        <p class="text-color-deactive text-xs uppercase bold">CASIO</p>
+                                        <h3 class="bold clamp-text ">Đồng hồ Casio A158WEA-1DF</h3>
+                                        <div class="flex gap-5 flex-wrap product-tag__container active">
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Unisex</span>
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Quartz
+                                                (Pin)</span>
+                                            <span class="text-xs bg-white-secondary text-color-deactive product-tag">Dây
+                                                Kim Loại</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex jus-sb center-ver mt-5">
+                                    <div class="flex flex-col gap-2">
+                                        <span class="bold text-red text-price">10.209.600 đ</span>
+                                        <span class="text-color-deactive text-strike text-xs">13.512.000 đ</span>
+                                    </div>
+                                    <button
+                                        class="flex center-ver center-hor item-padding-10 bg-white cursor-pointer border-radius-5 btn-cart z-index-2 pos-rel">
+                                        <img src="./img/icon/cart-plus.svg" alt="Add to cart"
+                                            class="img-icon btn-cart-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="col-4">
+                            <div
+                                class="project-item jus-sb bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10 h-full">
+                                <a href="../product-detail.html" class="pos-abs cover-all z-index-1"
+                                    aria-label="Đồng hồ Orient"></a>
+
+                                <div class="flex flex-col gap-10 flex-1">
+                                    <div
+                                        class="project-item__img-container item-padding-30 pos-rel border-radius-5 overflow-hidden bg-white-secondary flex center-ver center-hor">
+                                        <div
+                                            class="product-badge border-radius-5 pos-abs bg-red text-color-white text-xs bold z-index-2">
+                                            -20%</div>
+                                        <div class="project-item__img fill-view">
+                                            <img src="./img/product/CASIO A158WEA-1DF.svg" alt="Orient"
+                                                class="img-icon product-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item__content flex flex-col gap-10">
+                                        <p class="text-color-deactive text-xs uppercase bold">ORIENT</p>
+                                        <h3 class="bold clamp-text ">Orient FAC0000DD0</h3>
+                                        <div class="flex gap-5 flex-wrap product-tag__container active">
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Nam</span>
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Automatic</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex jus-sb center-ver mt-5">
+                                    <div class="flex flex-col gap-2">
+                                        <span class="bold text-red text-price">14.500.000 đ</span>
+                                        <span class="text-color-deactive text-strike text-xs">18.000.000 đ</span>
+                                    </div>
+                                    <button
+                                        class="flex center-ver center-hor item-padding-10 bg-white cursor-pointer border-radius-5 btn-cart z-index-2 pos-rel">
+                                        <img src="./img/icon/cart-plus.svg" alt="Add to cart"
+                                            class="img-icon btn-cart-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="col-4">
+                            <div
+                                class="project-item jus-sb bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10 h-full">
+                                <a href="../product-detail.html" class="pos-abs cover-all z-index-1"
+                                    aria-label="Đồng hồ Seiko"></a>
+
+                                <div class="flex flex-col gap-10 flex-1">
+                                    <div
+                                        class="project-item__img-container item-padding-30 pos-rel border-radius-5 overflow-hidden bg-white-secondary flex center-ver center-hor">
+                                        <div
+                                            class="product-badge border-radius-5 pos-abs bg-red text-color-white text-xs bold z-index-2">
+                                            -15%</div>
+                                        <div class="project-item__img fill-view">
+                                            <img src="./img/product/CASIO A158WEA-1DF.svg" alt="Seiko"
+                                                class="img-icon product-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item__content flex flex-col gap-10">
+                                        <p class="text-color-deactive text-xs uppercase bold">SEIKO</p>
+                                        <h3 class="bold clamp-text ">Đồng hồ Seiko 5 Sports SBSA005</h3>
+                                        <div class="flex gap-5 flex-wrap product-tag__container active">
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Nam</span>
+                                            <span class="text-xs bg-white-secondary text-color-deactive product-tag">Cơ
+                                                Tự Động</span>
+                                            <span class="text-xs bg-white-secondary text-color-deactive product-tag">Dây
+                                                Thép</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex jus-sb center-ver mt-5">
+                                    <div class="flex flex-col gap-2">
+                                        <span class="bold text-red text-price">8.900.000 đ</span>
+                                        <span class="text-color-deactive text-strike text-xs">10.500.000 đ</span>
+                                    </div>
+                                    <button
+                                        class="flex center-ver center-hor item-padding-10 bg-white cursor-pointer border-radius-5 btn-cart z-index-2 pos-rel">
+                                        <img src="./img/icon/cart-plus.svg" alt="Add to cart"
+                                            class="img-icon btn-cart-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="col-4">
+                            <div
+                                class="project-item jus-sb bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10 h-full">
+                                <a href="../product-detail.html" class="pos-abs cover-all z-index-1"
+                                    aria-label="Đồng hồ Citizen"></a>
+
+                                <div class="flex flex-col gap-10 flex-1">
+                                    <div
+                                        class="project-item__img-container item-padding-30 pos-rel border-radius-5 overflow-hidden bg-white-secondary flex center-ver center-hor">
+                                        <div
+                                            class="product-badge border-radius-5 pos-abs bg-red text-color-white text-xs bold z-index-2">
+                                            -25%</div>
+                                        <div class="project-item__img fill-view">
+                                            <img src="./img/product/CASIO A158WEA-1DF.svg" alt="Citizen"
+                                                class="img-icon product-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item__content flex flex-col gap-10">
+                                        <p class="text-color-deactive text-xs uppercase bold">CITIZEN</p>
+                                        <h3 class="bold clamp-text ">Đồng hồ Citizen Eco-Drive Năng Lượng Mặt Trời
+                                            Chronograph CA4011-54H</h3>
+                                        <div class="flex gap-5 flex-wrap product-tag__container active">
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Nam</span>
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Eco-Drive</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex jus-sb center-ver mt-5">
+                                    <div class="flex flex-col gap-2">
+                                        <span class="bold text-red text-price">12.200.000 đ</span>
+                                        <span class="text-color-deactive text-strike text-xs">16.300.000 đ</span>
+                                    </div>
+                                    <button
+                                        class="flex center-ver center-hor item-padding-10 bg-white cursor-pointer border-radius-5 btn-cart z-index-2 pos-rel">
+                                        <img src="./img/icon/cart-plus.svg" alt="Add to cart"
+                                            class="img-icon btn-cart-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-4">
+                            <div
+                                class="project-item jus-sb bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10 h-full">
+                                <a href="../product-detail.html" class="pos-abs cover-all z-index-1"
+                                    aria-label="Đồng hồ Casio"></a>
+
+                                <div class="flex flex-col gap-10 flex-1">
+                                    <div
+                                        class="project-item__img-container item-padding-30 pos-rel border-radius-5 overflow-hidden bg-white-secondary flex center-ver center-hor">
+                                        <div
+                                            class="product-badge border-radius-5 pos-abs bg-red text-color-white text-xs bold z-index-2">
+                                            -20%</div>
+                                        <div class="project-item__img fill-view">
+                                            <img src="./img/product/CASIO A158WEA-1DF.svg" alt="Casio A158WEA-1DF"
+                                                class="img-icon product-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item__content flex flex-col gap-10">
+                                        <p class="text-color-deactive text-xs uppercase bold">CASIO</p>
+                                        <h3 class="bold clamp-text ">Đồng hồ Casio A158WEA-1DF</h3>
+                                        <div class="flex gap-5 flex-wrap product-tag__container active">
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Unisex</span>
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Quartz
+                                                (Pin)</span>
+                                            <span class="text-xs bg-white-secondary text-color-deactive product-tag">Dây
+                                                Kim Loại</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex jus-sb center-ver mt-5">
+                                    <div class="flex flex-col gap-2">
+                                        <span class="bold text-red text-price">10.209.600 đ</span>
+                                        <span class="text-color-deactive text-strike text-xs">13.512.000 đ</span>
+                                    </div>
+                                    <button
+                                        class="flex center-ver center-hor item-padding-10 bg-white cursor-pointer border-radius-5 btn-cart z-index-2 pos-rel">
+                                        <img src="./img/icon/cart-plus.svg" alt="Add to cart"
+                                            class="img-icon btn-cart-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="col-4">
+                            <div
+                                class="project-item jus-sb bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10 h-full">
+                                <a href="../product-detail.html" class="pos-abs cover-all z-index-1"
+                                    aria-label="Đồng hồ Orient"></a>
+
+                                <div class="flex flex-col gap-10 flex-1">
+                                    <div
+                                        class="project-item__img-container item-padding-30 pos-rel border-radius-5 overflow-hidden bg-white-secondary flex center-ver center-hor">
+                                        <div
+                                            class="product-badge border-radius-5 pos-abs bg-red text-color-white text-xs bold z-index-2">
+                                            -20%</div>
+                                        <div class="project-item__img fill-view">
+                                            <img src="./img/product/CASIO A158WEA-1DF.svg" alt="Orient"
+                                                class="img-icon product-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item__content flex flex-col gap-10">
+                                        <p class="text-color-deactive text-xs uppercase bold">ORIENT</p>
+                                        <h3 class="bold clamp-text ">Orient FAC0000DD0</h3>
+                                        <div class="flex gap-5 flex-wrap product-tag__container active">
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Nam</span>
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Automatic</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex jus-sb center-ver mt-5">
+                                    <div class="flex flex-col gap-2">
+                                        <span class="bold text-red text-price">14.500.000 đ</span>
+                                        <span class="text-color-deactive text-strike text-xs">18.000.000 đ</span>
+                                    </div>
+                                    <button
+                                        class="flex center-ver center-hor item-padding-10 bg-white cursor-pointer border-radius-5 btn-cart z-index-2 pos-rel">
+                                        <img src="./img/icon/cart-plus.svg" alt="Add to cart"
+                                            class="img-icon btn-cart-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="col-4">
+                            <div
+                                class="project-item jus-sb bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10 h-full">
+                                <a href="../product-detail.html" class="pos-abs cover-all z-index-1"
+                                    aria-label="Đồng hồ Seiko"></a>
+
+                                <div class="flex flex-col gap-10 flex-1">
+                                    <div
+                                        class="project-item__img-container item-padding-30 pos-rel border-radius-5 overflow-hidden bg-white-secondary flex center-ver center-hor">
+                                        <div
+                                            class="product-badge border-radius-5 pos-abs bg-red text-color-white text-xs bold z-index-2">
+                                            -15%</div>
+                                        <div class="project-item__img fill-view">
+                                            <img src="./img/product/CASIO A158WEA-1DF.svg" alt="Seiko"
+                                                class="img-icon product-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item__content flex flex-col gap-10">
+                                        <p class="text-color-deactive text-xs uppercase bold">SEIKO</p>
+                                        <h3 class="bold clamp-text ">Đồng hồ Seiko 5 Sports SBSA005</h3>
+                                        <div class="flex gap-5 flex-wrap product-tag__container active">
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Nam</span>
+                                            <span class="text-xs bg-white-secondary text-color-deactive product-tag">Cơ
+                                                Tự Động</span>
+                                            <span class="text-xs bg-white-secondary text-color-deactive product-tag">Dây
+                                                Thép</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex jus-sb center-ver mt-5">
+                                    <div class="flex flex-col gap-2">
+                                        <span class="bold text-red text-price">8.900.000 đ</span>
+                                        <span class="text-color-deactive text-strike text-xs">10.500.000 đ</span>
+                                    </div>
+                                    <button
+                                        class="flex center-ver center-hor item-padding-10 bg-white cursor-pointer border-radius-5 btn-cart z-index-2 pos-rel">
+                                        <img src="./img/icon/cart-plus.svg" alt="Add to cart"
+                                            class="img-icon btn-cart-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="col-4">
+                            <div
+                                class="project-item jus-sb bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10 h-full">
+                                <a href="../product-detail.html" class="pos-abs cover-all z-index-1"
+                                    aria-label="Đồng hồ Citizen"></a>
+
+                                <div class="flex flex-col gap-10 flex-1">
+                                    <div
+                                        class="project-item__img-container item-padding-30 pos-rel border-radius-5 overflow-hidden bg-white-secondary flex center-ver center-hor">
+                                        <div
+                                            class="product-badge border-radius-5 pos-abs bg-red text-color-white text-xs bold z-index-2">
+                                            -25%</div>
+                                        <div class="project-item__img fill-view">
+                                            <img src="./img/product/CASIO A158WEA-1DF.svg" alt="Citizen"
+                                                class="img-icon product-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item__content flex flex-col gap-10">
+                                        <p class="text-color-deactive text-xs uppercase bold">CITIZEN</p>
+                                        <h3 class="bold clamp-text ">Đồng hồ Citizen Eco-Drive Năng Lượng Mặt Trời
+                                            Chronograph CA4011-54H</h3>
+                                        <div class="flex gap-5 flex-wrap product-tag__container active">
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Nam</span>
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Eco-Drive</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex jus-sb center-ver mt-5">
+                                    <div class="flex flex-col gap-2">
+                                        <span class="bold text-red text-price">12.200.000 đ</span>
+                                        <span class="text-color-deactive text-strike text-xs">16.300.000 đ</span>
+                                    </div>
+                                    <button
+                                        class="flex center-ver center-hor item-padding-10 bg-white cursor-pointer border-radius-5 btn-cart z-index-2 pos-rel">
+                                        <img src="./img/icon/cart-plus.svg" alt="Add to cart"
+                                            class="img-icon btn-cart-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="col-4">
+                            <div
+                                class="project-item jus-sb bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10 h-full">
+                                <a href="../product-detail.html" class="pos-abs cover-all z-index-1"
+                                    aria-label="Đồng hồ Casio"></a>
+
+                                <div class="flex flex-col gap-10 flex-1">
+                                    <div
+                                        class="project-item__img-container item-padding-30 pos-rel border-radius-5 overflow-hidden bg-white-secondary flex center-ver center-hor">
+                                        <div
+                                            class="product-badge border-radius-5 pos-abs bg-red text-color-white text-xs bold z-index-2">
+                                            -20%</div>
+                                        <div class="project-item__img fill-view">
+                                            <img src="./img/product/CASIO A158WEA-1DF.svg" alt="Casio A158WEA-1DF"
+                                                class="img-icon product-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item__content flex flex-col gap-10">
+                                        <p class="text-color-deactive text-xs uppercase bold">CASIO</p>
+                                        <h3 class="bold clamp-text ">Đồng hồ Casio A158WEA-1DF</h3>
+                                        <div class="flex gap-5 flex-wrap product-tag__container active">
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Unisex</span>
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Quartz
+                                                (Pin)</span>
+                                            <span class="text-xs bg-white-secondary text-color-deactive product-tag">Dây
+                                                Kim Loại</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex jus-sb center-ver mt-5">
+                                    <div class="flex flex-col gap-2">
+                                        <span class="bold text-red text-price">10.209.600 đ</span>
+                                        <span class="text-color-deactive text-strike text-xs">13.512.000 đ</span>
+                                    </div>
+                                    <button
+                                        class="flex center-ver center-hor item-padding-10 bg-white cursor-pointer border-radius-5 btn-cart z-index-2 pos-rel">
+                                        <img src="./img/icon/cart-plus.svg" alt="Add to cart"
+                                            class="img-icon btn-cart-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="col-4">
+                            <div
+                                class="project-item jus-sb bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10 h-full">
+                                <a href="../product-detail.html" class="pos-abs cover-all z-index-1"
+                                    aria-label="Đồng hồ Orient"></a>
+
+                                <div class="flex flex-col gap-10 flex-1">
+                                    <div
+                                        class="project-item__img-container item-padding-30 pos-rel border-radius-5 overflow-hidden bg-white-secondary flex center-ver center-hor">
+                                        <div
+                                            class="product-badge border-radius-5 pos-abs bg-red text-color-white text-xs bold z-index-2">
+                                            -20%</div>
+                                        <div class="project-item__img fill-view">
+                                            <img src="./img/product/CASIO A158WEA-1DF.svg" alt="Orient"
+                                                class="img-icon product-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item__content flex flex-col gap-10">
+                                        <p class="text-color-deactive text-xs uppercase bold">ORIENT</p>
+                                        <h3 class="bold clamp-text ">Orient FAC0000DD0</h3>
+                                        <div class="flex gap-5 flex-wrap product-tag__container active">
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Nam</span>
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Automatic</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex jus-sb center-ver mt-5">
+                                    <div class="flex flex-col gap-2">
+                                        <span class="bold text-red text-price">14.500.000 đ</span>
+                                        <span class="text-color-deactive text-strike text-xs">18.000.000 đ</span>
+                                    </div>
+                                    <button
+                                        class="flex center-ver center-hor item-padding-10 bg-white cursor-pointer border-radius-5 btn-cart z-index-2 pos-rel">
+                                        <img src="./img/icon/cart-plus.svg" alt="Add to cart"
+                                            class="img-icon btn-cart-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="col-4">
+                            <div
+                                class="project-item jus-sb bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10 h-full">
+                                <a href="../product-detail.html" class="pos-abs cover-all z-index-1"
+                                    aria-label="Đồng hồ Seiko"></a>
+
+                                <div class="flex flex-col gap-10 flex-1">
+                                    <div
+                                        class="project-item__img-container item-padding-30 pos-rel border-radius-5 overflow-hidden bg-white-secondary flex center-ver center-hor">
+                                        <div
+                                            class="product-badge border-radius-5 pos-abs bg-red text-color-white text-xs bold z-index-2">
+                                            -15%</div>
+                                        <div class="project-item__img fill-view">
+                                            <img src="./img/product/CASIO A158WEA-1DF.svg" alt="Seiko"
+                                                class="img-icon product-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item__content flex flex-col gap-10">
+                                        <p class="text-color-deactive text-xs uppercase bold">SEIKO</p>
+                                        <h3 class="bold clamp-text ">Đồng hồ Seiko 5 Sports SBSA005</h3>
+                                        <div class="flex gap-5 flex-wrap product-tag__container active">
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Nam</span>
+                                            <span class="text-xs bg-white-secondary text-color-deactive product-tag">Cơ
+                                                Tự Động</span>
+                                            <span class="text-xs bg-white-secondary text-color-deactive product-tag">Dây
+                                                Thép</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex jus-sb center-ver mt-5">
+                                    <div class="flex flex-col gap-2">
+                                        <span class="bold text-red text-price">8.900.000 đ</span>
+                                        <span class="text-color-deactive text-strike text-xs">10.500.000 đ</span>
+                                    </div>
+                                    <button
+                                        class="flex center-ver center-hor item-padding-10 bg-white cursor-pointer border-radius-5 btn-cart z-index-2 pos-rel">
+                                        <img src="./img/icon/cart-plus.svg" alt="Add to cart"
+                                            class="img-icon btn-cart-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="col-4">
+                            <div
+                                class="project-item jus-sb bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10 h-full">
+                                <a href="../product-detail.html" class="pos-abs cover-all z-index-1"
+                                    aria-label="Đồng hồ Citizen"></a>
+
+                                <div class="flex flex-col gap-10 flex-1">
+                                    <div
+                                        class="project-item__img-container item-padding-30 pos-rel border-radius-5 overflow-hidden bg-white-secondary flex center-ver center-hor">
+                                        <div
+                                            class="product-badge border-radius-5 pos-abs bg-red text-color-white text-xs bold z-index-2">
+                                            -25%</div>
+                                        <div class="project-item__img fill-view">
+                                            <img src="./img/product/CASIO A158WEA-1DF.svg" alt="Citizen"
+                                                class="img-icon product-img">
+                                        </div>
+                                    </div>
+
+                                    <div class="project-item__content flex flex-col gap-10">
+                                        <p class="text-color-deactive text-xs uppercase bold">CITIZEN</p>
+                                        <h3 class="bold clamp-text ">Đồng hồ Citizen Eco-Drive Năng Lượng Mặt Trời
+                                            Chronograph CA4011-54H</h3>
+                                        <div class="flex gap-5 flex-wrap product-tag__container active">
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Nam</span>
+                                            <span
+                                                class="text-xs bg-white-secondary text-color-deactive product-tag">Eco-Drive</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex jus-sb center-ver mt-5">
+                                    <div class="flex flex-col gap-2">
+                                        <span class="bold text-red text-price">12.200.000 đ</span>
+                                        <span class="text-color-deactive text-strike text-xs">16.300.000 đ</span>
+                                    </div>
+                                    <button
+                                        class="flex center-ver center-hor item-padding-10 bg-white cursor-pointer border-radius-5 btn-cart z-index-2 pos-rel">
+                                        <img src="./img/icon/cart-plus.svg" alt="Add to cart"
+                                            class="img-icon btn-cart-icon">
+                                    </button>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <div class="flex center-hor center-ver gap-10 mt-20">
+                        <button class="pagination-btn text-color-deactive">‹</button>
+                        <button class="pagination-btn active bold">1</button>
+                        <button class="pagination-btn text-color-deactive">2</button>
+                        <button class="pagination-btn text-color-deactive">›</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="container-f container-padding flex center-hor bg-white-secondary">
+            <div class="container-l flex flex-col gap-30">
+                <div class="container-m flex flex-col gap-10 center-hor">
+                    <h2 class="section-title text-center bold uppercase">Khách hàng tiểu biểu của mpx</h2>
+                    <p class="text-center">Demo: chuyên cung cấp các hệ thống sân khấu, giàn truss, gian hàng triễn lảm,
+                        hộp đèn quảng cáo và giải pháp trưng
+                        bày sáng tạo với công nghệ module, kỹ thuật cơ khí chính xác và tiêu chuẩn quốc tế</p>
+                </div>
+                <div class="logo-brand-wrapper pos-rel">
+
+                    <div class="swiper-button-prev custom-prev-btn"></div>
+                    <div class="swiper-button-next custom-next-btn"></div>
+
+                    <div class="logo-brand__swiper fill-view swiper">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <div
+                                    class="logo-brand__item padding-10 pos-rel bg-white flex center-hor center-ver border-radius-5">
+                                    <img class="img-content" src="./img/brand/candino.svg" alt="Candino Swiss Watch">
+                                    <a class="pos-abs cover-all" href="javascript:void(0)"></a>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div
+                                    class="logo-brand__item padding-10 pos-rel bg-white flex center-hor center-ver border-radius-5">
+                                    <img class="img-content" src="./img/brand/adriatice.svg"
+                                        alt="Adriatica Swiss Made Watches">
+                                    <a class="pos-abs cover-all" href="javascript:void(0)"></a>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div
+                                    class="logo-brand__item padding-10 pos-rel bg-white flex center-hor center-ver border-radius-5">
+                                    <img class="img-content" src="./img/brand/bulova.svg" alt="Bulova">
+                                    <a class="pos-abs cover-all" href="javascript:void(0)"></a>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div
+                                    class="logo-brand__item padding-10 pos-rel bg-white flex center-hor center-ver border-radius-5">
+                                    <img class="img-content" src="./img/brand/alexandre.svg" alt="Alexandre Christie">
+                                    <a class="pos-abs cover-all" href="javascript:void(0)"></a>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div
+                                    class="logo-brand__item padding-10 pos-rel bg-white flex center-hor center-ver border-radius-5">
+                                    <img class="img-content" src="./img/brand/titoni.svg" alt="Titoni of Switzerland">
+                                    <a class="pos-abs cover-all" href="javascript:void(0)"></a>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div
+                                    class="logo-brand__item padding-10 pos-rel bg-white flex center-hor center-ver border-radius-5">
+                                    <img class="img-content" src="./img/brand/august-berg.svg" alt="August Berg">
+                                    <a class="pos-abs cover-all" href="javascript:void(0)"></a>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div
+                                    class="logo-brand__item padding-10 pos-rel bg-white flex center-hor center-ver border-radius-5">
+                                    <img class="img-content" src="./img/brand/tophill.svg" alt="Tophill Swiss Brand">
+                                    <a class="pos-abs cover-all" href="javascript:void(0)"></a>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div
+                                    class="logo-brand__item padding-10 pos-rel bg-white flex center-hor center-ver border-radius-5">
+                                    <img class="img-content" src="./img/brand/orient-star.svg" alt="Orient Star">
+                                    <a class="pos-abs cover-all" href="javascript:void(0)"></a>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div
+                                    class="logo-brand__item padding-10 pos-rel bg-white flex center-hor center-ver border-radius-5">
+                                    <img class="img-content" src="./img/brand/olympia-star.svg" alt="Olympia Star">
+                                    <a class="pos-abs cover-all" href="javascript:void(0)"></a>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide">
+                                <div
+                                    class="logo-brand__item padding-10 pos-rel bg-white flex center-hor center-ver border-radius-5">
+                                    <img class="img-content" src="./img/brand/candino.svg" alt="Candino Swiss Watch">
+                                    <a class="pos-abs cover-all" href="javascript:void(0)"></a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination custom-dots"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="container-f container-padding news-background flex center-hor bg-white-secondary">
+            <div class="container-l flex flex-col gap-30">
+                <div class=" flex flex-col center-hor z-index-2 guest-comment__title">
+                    <p class="text-color-white">Bài viết và blog</p>
+                    <h2 class="section-title bold uppercase text-color-white">Bài viết gần đây</h2>
+                    <div class="title-border-bottom"></div>
+                </div>
+                <div class="news-slider-wrapper pos-rel">
+                    <div class="swiper-button-prev custom-prev-btn"></div>
+                    <div class="swiper-button-next custom-next-btn"></div>
+                    <div class="news-swiper fill-view swiper">
+                        <div class="swiper-wrapper">
+                            <article class="swiper-slide">
+                                <div
+                                    class="news-item bg-white overflow-hidden flex flex-col pos-rel border-radius-5 shadow-sm">
+                                    <div class="news-item__img">
+                                        <img src="./img/news/news.jpg" alt="Tin tức MPX" class="img-content">
+                                    </div>
+                                    <div class="news-item__content item-padding-20 flex flex-col gap-10">
+                                        <div class="flex gap-20">
+                                            <div class="news-item__date flex gap-10">
+                                                <img class="img-icon" src="./img/icon/clock.svg" alt="">
+                                                <p>17/4/2026</p>
+                                            </div>
+                                            <div class="news-item__view flex gap-10">
+                                                <img class="img-icon" src="./img/icon/eye.svg" alt="">
+                                                <p>500</p>
+                                            </div>
+                                        </div>
+                                        <h4 class="news-item__title clamp-text bold uppercase">Phân Biệt Đồng Hồ Cơ
+                                            (Automatic) Và Đồng Hồ Pin (Quartz): Lựa Chọn Nào Tốt Nhất?</h4>
+                                        <p class="news-item__desc clamp-text">
+                                            Bạn đang phân vân giữa sự bền bỉ, tiện dụng của máy Quartz và nghệ thuật cơ
+                                            khí đỉnh cao của máy Automatic? Bài viết này sẽ giúp bạn giải mã
+                                        </p>
+                                        <button
+                                            class="news-btn btn-padding flex gap-5 center-hor center-ver text-color-white border-radius-5 cursor-point bg-primary uppercase flex gap-10 center-ver un-wrap">
+                                            <p class="text-color-white">Đọc thêm</p>
+                                            <p class="text-color-white">➔</p>
+                                        </button>
+                                    </div>
+                                    <a href="./news-detail.html" class="pos-abs cover-all" aria-label="Xem tin tức"></a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="container-f bg-black center-ver flex flex-col item-padding-60-0 gap-30"
+        data-include="./component/footer.html"></footer>
+    <div class="btntotop__container pos-fixed bg-white" data-include="./component/rolltotop.html" id="btnToTop">
+    </div>
+
+    <script defer type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer type="text/javascript" src="./js/frontend.js"></script>
+</body>
+
+</html>

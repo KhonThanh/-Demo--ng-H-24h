@@ -49,8 +49,42 @@
         display: none !important;
     }
 
-    .home-banner__title{
+    .home-banner__title {
         font-size: calc(var(--font-size-base) + 12px);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    .btn-setting {
+        display: block;
+    }
+
+    .allproduct-top__filter {
+        justify-content: space-between;
+    }
+
+    .sidebar-filter {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 85%;
+        max-width: 350px;
+        height: 100vh;
+        background-color: var(--white-color);
+        z-index: 9999;
+        overflow-y: auto;
+        padding: 20px;
+        transform: translateX(-100%);
+    }
+
+    .sidebar-filter.active {
+        transform: translateX(0);
+        box-shadow: 10px 0 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .allproduct-container {
+        width: 100%;
     }
 }
 
