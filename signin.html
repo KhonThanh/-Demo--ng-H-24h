@@ -25,68 +25,90 @@
                 <a href="javascript:void(0)" class="nav-bar__item">Đăng ký</a>
             </div>
         </section>
-      <section class="container-f flex center-ver container-padding">
-            <div class="auth-section container-xxs flex flex-col gap-20 center-ver" id="section-register">
+        <section class="container-f flex center-ver container-padding">
+            <div class="auth-section container-xxs flex flex-col gap-10 center-ver item-padding-30 border-radius-5 custom-item__low" id="section-register">
 
                 <div class="auth-section__logo">
                     <img src="./img/logo/logo-dongho.svg" alt="Logo">
                 </div>
 
-                <h3 class="auth-title">Đăng ký tài khoản</h3>
+                <h3 class="auth-title  bold">Đăng ký tài khoản</h3>
 
-                <form class="js-validate-form flex flex-col gap-20" data-form="register">
-                    <p>Tài khoản</p>
-                    <div class="form-group flex">
-                        <input type="text" name="username" placeholder="Tài khoản" required minlength="4"
-                            data-msg="Tài khoản tối thiểu 4 ký tự" autocomplete="username">
-                        <small class="error-msg"></small>
+                <form class="js-validate-form flex flex-col gap-20 col-1" data-form="register">
+
+                    <div class="flex flex-col gap-5 form-group">
+                        <label class="bold text-sm">Tài khoản</label>
+                        <input type="text" name="username" placeholder="Nhập tài khoản" required minlength="4"
+                            data-msg="Tài khoản tối thiểu 4 ký tự" autocomplete="username"
+                            class="form-control item-padding-10-20 border-radius-5 bg-white-secondary border-none fill-view">
+                        <span class="error-msg text-red text-xs"></span>
                     </div>
-                    <p>Mật khẩu</p>
-                    <div class="form-group flex">
-                        <input type="password" name="password" placeholder="Mật khẩu" required minlength="6"
-                            data-msg="Mật khẩu tối thiểu 6 ký tự" autocomplete="new-password">
-                        <small class="error-msg"></small>
+
+                    <div class="flex flex-col gap-5 form-group">
+                        <label class="bold text-sm">Mật khẩu</label>
+                        <input type="password" name="password" placeholder="Nhập mật khẩu" required minlength="6"
+                            data-msg="Mật khẩu tối thiểu 6 ký tự" autocomplete="new-password"
+                            class="form-control item-padding-10-20 border-radius-5 bg-white-secondary border-none fill-view">
+                        <span class="error-msg text-red text-xs"></span>
                     </div>
-                    <p>Nhập lại mật khẩu</p>
-                    <div class="form-group flex">
+
+                    <div class="flex flex-col gap-5 form-group">
+                        <label class="bold text-sm">Nhập lại mật khẩu</label>
                         <input type="password" name="confirmPassword" placeholder="Nhập lại mật khẩu" required
-                            data-match="password" data-msg="Mật khẩu không khớp">
-                        <small class="error-msg"></small>
+                            data-match="password" data-msg="Mật khẩu không khớp"
+                            class="form-control item-padding-10-20 border-radius-5 bg-white-secondary border-none fill-view">
+                        <span class="error-msg text-red text-xs"></span>
                     </div>
-                    <p>Số điện thoại</p>
-                    <div class="form-group flex">
-                        <input type="tel" name="phone" placeholder="Số điện thoại" required pattern="^0\d{9}$"
-                            data-msg="Số điện thoại không hợp lệ">
-                        <small class="error-msg"></small>
+
+                    <div class="flex flex-col gap-5 form-group">
+                        <label class="bold text-sm">Số điện thoại</label>
+                        <input type="tel" name="phone" placeholder="Nhập số điện thoại" required pattern="^0\d{9}$"
+                            data-msg="Số điện thoại không hợp lệ"
+                            class="form-control item-padding-10-20 border-radius-5 bg-white-secondary border-none fill-view">
+                        <span class="error-msg text-red text-xs"></span>
                     </div>
-                    <p>Email</p>
-                    <div class="form-group flex">
-                        <input type="email" name="email" placeholder="Email" required data-msg="Email không hợp lệ"
-                            autocomplete="email">
-                        <small class="error-msg"></small>
+
+                    <div class="flex flex-col gap-5 form-group">
+                        <label class="bold text-sm">Email</label>
+                        <input type="email" name="email" placeholder="Nhập email" required data-msg="Email không hợp lệ"
+                            autocomplete="email"
+                            class="form-control item-padding-10-20 border-radius-5 bg-white-secondary border-none fill-view">
+                        <span class="error-msg text-red text-xs"></span>
                     </div>
-                    <div class="form-group checkbox-group">
-                        <label class="flex center-ver gap-10">
-                            <input type="checkbox" name="agree" required>
-                            <span>
+
+                    <div class="flex flex-col gap-5 form-group">
+                        <label class="flex center-ver gap-10 cursor-pointer">
+                            <input type="checkbox" name="agree" required class="form-control"
+                                data-msg="Vui lòng đồng ý với điều khoản">
+                            <span class="text-sm">
                                 Tôi đồng ý với
-                                <a href="javascript:void(0)">Điều khoản dịch vụ</a>
+                                <a href="javascript:void(0)" class="bold">Điều khoản dịch vụ</a>
                                 và
-                                <a href="javascript:void(0)">Chính sách bảo mật</a>
+                                <a href="javascript:void(0)" class="bold">Chính sách bảo mật</a>
                             </span>
                         </label>
-                        <small class="error-msg"></small>
-                    </div>
-                    <div class="form-group captcha-box">
-                        <div class="fake-recaptcha">
-                            <input type="checkbox" name="captcha" required>
-                            <span>I'm not a robot</span>
-                        </div>
-                        <small class="error-msg"></small>
+                        <span class="error-msg text-red text-xs"></span>
                     </div>
 
-                    <button type="submit">Đăng ký</button>
-                    <p class="text-center">Bạn có tài khoản rồi? <u><a href="./login.html">Đăng nhập ngay</a></u></p>
+                    <div class="flex flex-col gap-5 form-group">
+                        <label
+                            class="fake-recaptcha flex center-ver gap-10 bg-white-secondary item-padding-10 border-radius-5 cursor-pointer">
+                            <input type="checkbox" name="captcha" required class="form-control"
+                                data-msg="Vui lòng xác minh captcha">
+                            <span class="text-sm">I'm not a robot</span>
+                        </label>
+                        <span class="error-msg text-red text-xs"></span>
+                    </div>
+
+                    <div class="flex flex-col gap-10">
+                        <button type="submit"
+                            class="bg-primary text-color-white border-radius-5 bold uppercase cursor-pointer btn-padding border-none col-1">
+                            Đăng ký
+                        </button>
+                        <p class="text-center text-sm">Bạn có tài khoản rồi? <u><a href="./login.html" class="bold">Đăng
+                                    nhập ngay</a></u></p>
+                    </div>
+
                 </form>
             </div>
         </section>

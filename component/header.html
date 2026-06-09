@@ -19,21 +19,47 @@
         </div>
 
         <div class="flex center-ver gap-10 top-menu__icon__function">
-            <a href="javascript:void(0)" class="flex center-ver center-hor border-radius-5 item-padding-5">
-                <img class="img-icon" src="./img/icon/top-menu-search.svg" alt="Search">
-            </a>
-            <a href="javascript:void(0)" class="flex center-ver center-hor border-radius-5 item-padding-5">
+            <div
+                class="top-menu__icon__item pos-rel flex center-ver center-hor border-radius-5 cursor-pointer dh24h-search-dropdown">
+                <a href="javascript:void(0)" class="pos-abs cover-all z-index-1" aria-label="Search"></a>
+
+                <img class="img-icon" src="./img/icon/top-menu-search.svg" alt="Search" width="24" height="24">
+
+                <div 
+                    class="pos-abs bg-white border-radius-5 custom-item__low item-padding-10 z-index-2 top-menu__icon__search">
+                    <form action="" class="flex center-ver gap-10 col-1">
+                        <input type="text" placeholder="Tìm kiếm đồng hồ..." required
+                            class="form-control flex-1 item-padding-10-20 border-radius-5 bg-white-secondary border-none">
+                        <button type="submit"
+                            class="bg-primary text-color-white border-radius-5 border-none cursor-pointer item-padding-10-20 bold text-sm">
+                            Tìm
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div
+                class="top-menu__icon__item pos-rel flex center-ver center-hor border-radius-5 cursor-pointer dh24h-user-dropdown">
                 <img class="img-icon" src="./img/icon/top-menu-user.svg" alt="User">
-            </a>
-            <a href="javascript:void(0)" class="flex center-ver center-hor border-radius-5 item-padding-5">
+
+                <div class="pos-abs bg-white border-radius-5 custom-item__low flex-col dh24h-submenu z-index-2">
+                    <a href="./login.html" class="un-wrap text-sm text-color-black item-padding-5 z-index-2">Đăng
+                        nhập</a>
+                    <a href="./signin.html" class="un-wrap text-sm text-color-black item-padding-5 z-index-2">Đăng
+                        ký</a>
+                </div>
+            </div>
+            <div class="top-menu__icon__item pos-rel flex center-ver center-hor border-radius-5 ">
+                <a href="javascript:void(0)" class="pos-abs cover-all z-index-1" aria-label="Location"></a>
                 <img class="img-icon" src="./img/icon/top-menu-location.svg" alt="Location">
-            </a>
-            <a href="javascript:void(0)" class="flex center-ver center-hor border-radius-5 item-padding-5">
+            </div>
+            <div class="top-menu__icon__item pos-rel flex center-ver center-hor border-radius-5 ">
+                <a href="javascript:void(0)" class="pos-abs cover-all z-index-1" aria-label="Language"></a>
                 <img class="img-icon" src="./img/icon/top-menu-land.svg" alt="Language">
-            </a>
-            <a href="javascript:void(0)" class="flex center-ver center-hor border-radius-5 item-padding-5">
+            </div>
+            <div class="top-menu__icon__item pos-rel flex center-ver center-hor border-radius-5 ">
+                <a href="../shopping.html" class="pos-abs cover-all z-index-1" aria-label="Cart"></a>
                 <img class="img-icon" src="./img/icon/top-menu-shopping.svg" alt="Cart">
-            </a>
+            </div>
         </div>
     </div>
 </div>
@@ -127,7 +153,7 @@
                     <a href="../news.html" class="text-color-deactive bold uppercase">Tin tức</a>
                 </div>
             </div>
-            <div class="flex center-ver gap-10 item-padding-10 bg-primary right-hor"> 
+            <div class="flex center-ver gap-10 item-padding-10 bg-primary right-hor">
                 <a href="javascript:void(0)" class="flex center-ver center-hor border-radius-5 item-padding-5">
                     <img class="img-icon" src="./img/icon/top-menu-user.svg" alt="User">
                 </a>

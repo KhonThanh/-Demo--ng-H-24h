@@ -64,7 +64,7 @@
 
                     <div class="project-swiper fill-view swiper">
                         <div class="swiper-wrapper">
-                            <article class="swiper-slide">
+                            <article class="swiper-slide col-4">
                                 <div
                                     class="project-item bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10">
 
@@ -137,7 +137,7 @@
 
                     <div class="project-swiper fill-view swiper">
                         <div class="swiper-wrapper">
-                            <article class="swiper-slide">
+                            <article class="swiper-slide col-4">
                                 <div
                                     class="project-item bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10">
 
@@ -211,7 +211,7 @@
 
                     <div class="project-swiper fill-view swiper">
                         <div class="swiper-wrapper">
-                            <article class="swiper-slide">
+                            <article class="swiper-slide col-4">
                                 <div
                                     class="project-item bg-white flex flex-col pos-rel border-radius-5 custom-item__low item-padding-20 gap-10">
 
@@ -274,7 +274,8 @@
             <div class="container-l flex flex-col gap-30">
                 <div class="container-m flex flex-col gap-10 center-ver">
                     <h2 class="section-title text-center bold uppercase">Khách hàng tiểu biểu của mpx</h2>
-                    <p class="text-center section-desc">Demo: chuyên cung cấp các hệ thống sân khấu, giàn truss, gian hàng triễn lảm,
+                    <p class="text-center section-desc">Demo: chuyên cung cấp các hệ thống sân khấu, giàn truss, gian
+                        hàng triễn lảm,
                         hộp đèn quảng cáo và giải pháp trưng
                         bày sáng tạo với công nghệ module, kỹ thuật cơ khí chính xác và tiêu chuẩn quốc tế</p>
                 </div>
@@ -378,7 +379,8 @@
             <div class="container-l flex flex-col gap-30">
                 <div class="container-m flex flex-col gap-10 center-ver">
                     <h2 class="section-title text-center bold uppercase">Khách hàng tiểu biểu của mpx</h2>
-                    <p class="text-center section-desc">Demo: chuyên cung cấp các hệ thống sân khấu, giàn truss, gian hàng triễn lảm,
+                    <p class="text-center section-desc">Demo: chuyên cung cấp các hệ thống sân khấu, giàn truss, gian
+                        hàng triễn lảm,
                         hộp đèn quảng cáo và giải pháp trưng
                         bày sáng tạo với công nghệ module, kỹ thuật cơ khí chính xác và tiêu chuẩn quốc tế</p>
                 </div>
@@ -598,7 +600,7 @@
 
                 <div
                     class="contact-section__container contact-form__background item-padding-40 bg-white-secondary border-radius-10">
-                    <form class="flex flex-col gap-20 js-validate-form">
+                    <form class="flex flex-col gap-10 js-validate-form">
                         <div class="flex flex-col gap-10">
                             <span class="text-color-deactive italic text-sm">Liên hệ</span>
                             <h2 class="uppercase bold">Liên hệ với chúng tôi</h2>
@@ -609,13 +611,15 @@
                             <div class="flex-1 flex flex-col gap-10 form-group">
                                 <label class="bold">Họ và tên</label>
                                 <input type="text" placeholder="John Architect" required data-msg="Vui lòng nhập họ tên"
-                                    class="item-padding-10-20 border-radius-5 bg-white border-none fill-view">
+                                    class="form-control item-padding-10-20 border-radius-5 bg-white border-none fill-view">
                                 <span class="error-msg text-red text-xs"></span>
                             </div>
+
                             <div class="flex-1 flex flex-col gap-10 form-group">
                                 <label class="bold">Email</label>
                                 <input type="email" placeholder="name@architect.core" required
-                                    class="item-padding-10-20 border-radius-5 bg-white border-none fill-view">
+                                    data-msg="Email không hợp lệ"
+                                    class="form-control item-padding-10-20 border-radius-5 bg-white border-none fill-view">
                                 <span class="error-msg text-red text-xs"></span>
                             </div>
                         </div>
@@ -623,15 +627,16 @@
                         <div class="flex flex-wrap gap-20">
                             <div class="flex-1 flex flex-col gap-10 form-group">
                                 <label class="bold">Số điện thoại</label>
-                                <input type="text" placeholder="Số điện thoại" required pattern="^[0-9]{10,11}$"
+                                <input type="tel" placeholder="Số điện thoại" required pattern="^[0-9]{10,11}$"
                                     data-msg="SĐT phải có 10-11 số"
-                                    class="item-padding-10-20 border-radius-5 bg-white border-none fill-view">
+                                    class="form-control item-padding-10-20 border-radius-5 bg-white border-none fill-view">
                                 <span class="error-msg text-red text-xs"></span>
                             </div>
+
                             <div class="flex-1 flex flex-col gap-10 form-group">
                                 <label class="bold">Địa chỉ</label>
                                 <input type="text" placeholder="Địa chỉ" required
-                                    class="item-padding-10-20 border-radius-5 bg-white border-none fill-view">
+                                    class="form-control item-padding-10-20 border-radius-5 bg-white border-none fill-view">
                                 <span class="error-msg text-red text-xs"></span>
                             </div>
                         </div>
@@ -639,14 +644,7 @@
                         <div class="flex flex-col gap-10 form-group">
                             <label class="bold">Nội dung</label>
                             <textarea rows="4" required minlength="10" data-msg="Nội dung phải ít nhất 10 ký tự"
-                                class="item-padding-10-20 border-radius-5 bg-white border-none fill-view"></textarea>
-                            <span class="error-msg text-red text-xs"></span>
-                        </div>
-
-                        <div class="flex flex-col gap-10 form-group">
-                            <label class="bold">Mã bảo mật</label>
-                            <input type="text" required
-                                class="item-padding-10-20 border-radius-5 bg-white border-none fill-view">
+                                class="form-control item-padding-10-20 border-radius-5 bg-white border-none fill-view"></textarea>
                             <span class="error-msg text-red text-xs"></span>
                         </div>
 

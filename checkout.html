@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồng Hồ 24h | Giỏ hàng</title>
+    <link rel="icon" type="image/png" href="./img/logo/logo-favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="preload" as="image" href="./img/banner/banner-home.webp">
+    <!-- <link rel="stylesheet" href="../css/style.min.css"> -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/utility.css">
+</head>
+
+<body>
+    <header class="container-f bg-black " data-include="./component/header.html"></header>
+    <main class="container-f flex flex-col center-hor pos-rel">
+        <section class="flex bg-gray container-f">
+            <div class="container-l nav-bar__container">
+                <a href="./index.html" class="nav-bar__item">Trang chủ</a>
+                <a href="./service-detail.html" class="nav-bar__item">giỏ hàng</a>
+            </div>
+        </section>
+        <section class="container-f flex center-ver container-padding dh24h-checkout-section">
+            <div class="container-l flex flex-wrap gap-30 dh24h-checkout-wrapper">
+
+                <div class="flex-1 flex flex-col gap-20 dh24h-checkout-form-col">
+
+                    <h1 class=" text-color-primary bold">Thanh toán</h1>
+
+                    <form class="js-validate-form flex flex-col gap-20 col-1" data-form="checkout" novalidate>
+
+                        <h2 class="bold uppercase">1. Thông tin giao hàng</h2>
+
+                        <div class="flex flex-wrap gap-20">
+                            <div class="form-group flex-1 flex flex-col gap-5">
+                                <label class="text-sm bold">Họ và tên *</label>
+                                <input type="text" name="fullname"
+                                    class="form-control border-radius-5 custom-item__low item-padding-10  fill-view"
+                                    placeholder="Nhập họ và tên" required minlength="2"
+                                    data-msg="Vui lòng nhập đầy đủ họ tên">
+                                <span class="error-msg text-red text-xs"></span>
+                            </div>
+
+                            <div class="form-group flex-1 flex flex-col gap-5">
+                                <label class="text-sm bold">Số điện thoại *</label>
+                                <input type="tel" name="phone"
+                                    class="form-control border-radius-5 custom-item__low item-padding-10  fill-view"
+                                    placeholder="Nhập số điện thoại" required pattern="^0\d{9}$"
+                                    data-msg="Số điện thoại không hợp lệ (gồm 10 số, bắt đầu bằng 0)">
+                                <span class="error-msg text-red text-xs"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group flex flex-col gap-5">
+                            <label class="text-sm bold">Email *</label>
+                            <input type="email" name="email"
+                                class="form-control border-radius-5 custom-item__low item-padding-10  fill-view"
+                                placeholder="Nhập địa chỉ email" required data-msg="Email không đúng định dạng">
+                            <span class="error-msg text-red text-xs"></span>
+                        </div>
+
+                        <div class="form-group flex flex-col gap-5">
+                            <label class="text-sm bold">Địa chỉ giao hàng *</label>
+                            <input type="text" name="address"
+                                class="form-control border-radius-5 custom-item__low item-padding-10  fill-view"
+                                placeholder="Số nhà, tên đường, phường/xã, quận/huyện, tỉnh/thành phố" required
+                                data-msg="Vui lòng cung cấp địa chỉ giao hàng">
+                            <span class="error-msg text-red text-xs"></span>
+                        </div>
+
+                        <div class="col-1 bg-deactive dh24h-checkout-divider"></div>
+
+                        <h2 class="bold uppercase">2. Phương thức thanh toán</h2>
+
+                        <div class="form-group flex flex-col gap-10">
+
+                            <label
+                                class="flex center-ver gap-10 custom-item__low item-padding-20 border-radius-10 cursor-pointer bg-white-secondary">
+                                <input type="radio" name="payment_method" value="cod" required class="form-control"
+                                    data-msg="Vui lòng chọn một phương thức thanh toán">
+                                <span class="bold">Thanh toán khi nhận hàng (COD)</span>
+                            </label>
+
+                            <label
+                                class="flex center-ver gap-10 custom-item__low item-padding-20 border-radius-10 cursor-pointer bg-white-secondary">
+                                <input type="radio" name="payment_method" value="transfer" required class="form-control"
+                                    data-msg="Vui lòng chọn một phương thức thanh toán">
+                                <span class="bold">Chuyển khoản ngân hàng</span>
+                            </label>
+
+                            <span class="error-msg text-red text-xs"></span>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="flex-1 flex flex-col gap-30 dh24h-checkout-sidebar">
+
+                    <div
+                        class="bg-white custom-item__low border-radius-10 item-padding-30 flex flex-col gap-20 dh24h-checkout-summary">
+                        <h2 class="bold ">Đơn hàng của bạn</h2>
+                        <div class="col-1 bg-deactive dh24h-checkout-divider"></div>
+
+                        <div class="flex flex-col gap-10">
+                            <div class="flex jus-sb center-ver">
+                                <span class="text-sm text-color-deactive">Seiko Presage Cocktail (x1)</span>
+                                <span class="text-sm bold text-color-black">24,500,000 đ</span>
+                            </div>
+                            <div class="flex jus-sb center-ver">
+                                <span class="text-sm text-color-deactive">Citizen Eco-Drive (x1)</span>
+                                <span class="text-sm bold text-color-black">12,800,000 đ</span>
+                            </div>
+                        </div>
+
+                        <div class="col-1 bg-deactive dh24h-checkout-divider"></div>
+
+                        <div class="flex flex-col gap-10">
+                            <div class="flex jus-sb center-ver">
+                                <span class="text-sm text-color-deactive">Tạm tính</span>
+                                <span class="text-sm bold text-color-black">37,300,000 đ</span>
+                            </div>
+                            <div class="flex jus-sb center-ver">
+                                <span class="text-sm text-color-deactive">Phí vận chuyển</span>
+                                <span class="text-sm bold text-color-black">Miễn phí</span>
+                            </div>
+                        </div>
+
+                        <div class="col-1 bg-deactive dh24h-checkout-divider"></div>
+
+                        <div class="flex jus-sb center-ver gap-10">
+                            <span class="bold text-color-black">Tổng cộng</span>
+                            <span class="text-header-size text-color-primary bold text-right">37,300,000 đ</span>
+                        </div>
+
+                        <button type="submit"
+                            onclick="document.querySelector('.js-validate-form').dispatchEvent(new Event('submit', {cancelable: true, bubbles: true}))"
+                            class="bg-primary text-color-white bold item-padding-10-20 border-radius-5  cursor-pointer flex center-hor center-ver gap-5 col-1">
+                            Đặt hàng <span>→</span>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-col gap-20 dh24h-checkout-contact-info">
+
+                        <div class="custom-item__low item-padding-20 flex center-ver gap-20 border-radius-10 bg-white">
+                            <div class="icon-box-50 flex center-ver center-hor border-radius-50 bg-white-secondary">
+                                <img src="./img/icon/phone-icon.svg" class="img-icon" alt="Phone">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-color-deactive text-sm">Gọi ngay cho chúng tôi</span>
+                                <span class="bold">0902 808 020 - 0908 700 809</span>
+                            </div>
+                        </div>
+
+                        <div class="custom-item__low item-padding-20 flex center-ver gap-20 border-radius-10 bg-white">
+                            <div class="icon-box-50 flex center-ver center-hor border-radius-50 bg-white-secondary">
+                                <img src="./img/icon/mail-icon.svg" class="img-icon" alt="Email">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-color-deactive text-sm">Email Cho Chúng Tôi 24/7</span>
+                                <span class="bold">dongho24h@gmail.com</span>
+                            </div>
+                        </div>
+
+                        <div class="custom-item__low item-padding-20 flex center-ver gap-20 border-radius-10 bg-white">
+                            <div class="icon-box-50 flex center-ver center-hor border-radius-50 bg-white-secondary">
+                                <img src="./img/icon/map-icon.svg" class="img-icon" alt="Map">
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-color-deactive text-sm">Địa Chỉ Trung Tâm</span>
+                                <span class="bold">584 Lạc Long Quân, P. Hòa Bình, Hồ Chí Minh</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="container-f bg-black center-ver flex flex-col item-padding-60-0 gap-30"
+        data-include="./component/footer.html"></footer>
+    <div class="btntotop__container pos-fixed bg-white" data-include="./component/rolltotop.html" id="btnToTop">
+    </div>
+
+    <script defer type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer type="text/javascript" src="./js/frontend.js"></script>
+</body>
+
+</html>

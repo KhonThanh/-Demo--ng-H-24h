@@ -469,48 +469,64 @@ function validateField(input) {
   const error = group?.querySelector(".error-msg");
   let message = "";
 
-  const value = input.value.trim();
-
-  if (input.hasAttribute("required") && !value) {
-    message = input.dataset.msg || "Vui lòng không để trống";
+  // 1. Nếu là Radio Button (Cùng name)
+  if (input.type === "radio") {
+    const radioGroup = document.querySelectorAll(`input[name="${input.name}"]`);
+    const isChecked = Array.from(radioGroup).some(radio => radio.checked);
+    if (input.hasAttribute("required") && !isChecked) {
+      message = input.dataset.msg || "Vui lòng chọn một tùy chọn";
+    }
+    // Gỡ lỗi cho toàn bộ group radio
+    radioGroup.forEach(radio => {
+      const rGroup = radio.closest(".form-group");
+      if (rGroup) rGroup.classList.toggle("error", !!message);
+    });
   }
-
-  if (!message && input.type === "email" && value) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(value)) message = "Email không hợp lệ";
+  // 2. Nếu là Checkbox
+  else if (input.type === "checkbox") {
+    if (input.hasAttribute("required") && !input.checked) {
+      message = input.dataset.msg || "Vui lòng xác nhận để tiếp tục";
+    }
   }
+    else {
+    const value = input.value.trim();
 
-  if (!message && input.hasAttribute("minlength")) {
-    const min = +input.getAttribute("minlength");
-    if (value.length < min) {
-      message = input.dataset.msg || `Tối thiểu ${min} ký tự`;
+    if (input.hasAttribute("required") && !value) {
+      message = input.dataset.msg || "Trường này không được để trống";
+    }
+
+    if (!message && input.type === "email" && value) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(value)) message = input.dataset.msg || "Email chưa đúng định dạng";
+    }
+
+    if (!message && input.hasAttribute("minlength") && value) {
+      const min = +input.getAttribute("minlength");
+      if (value.length < min) {
+        message = input.dataset.msg || `Vui lòng nhập tối thiểu ${min} ký tự`;
+      }
+    }
+    if (!message && input.pattern && value) {
+      const regex = new RegExp(input.pattern);
+      if (!regex.test(value)) {
+        message = input.dataset.msg || "Thông tin nhập chưa hợp lệ";
+      }
     }
   }
 
-  if (!message && input.tagName === "SELECT" && input.required) {
-    if (!input.value) message = "Vui lòng chọn một giá trị";
+  if (group && input.type !== "radio") {
+    group.classList.toggle("error", !!message);
   }
-
-  if (!message && input.type === "checkbox" && input.required) {
-    if (!input.checked) message = "Vui lòng xác nhận";
+  if (error) {
+    error.textContent = message;
   }
-
-  if (!message && input.pattern && input.value) {
-    const regex = new RegExp(input.pattern);
-    if (!regex.test(input.value)) {
-      message = input.dataset.msg || "Giá trị không hợp lệ";
-    }
-  }
-
-  if (group) group.classList.toggle("error", !!message);
-  if (error) error.textContent = message;
 
   return !message;
 }
 
 function validateForm(form) {
   let isValid = true;
-  form.querySelectorAll("input, textarea").forEach(input => {
+  form.querySelectorAll(".form-control, input[type='checkbox'], input[type='radio']").forEach(input => {
     if (!validateField(input)) isValid = false;
   });
   return isValid;
@@ -521,12 +537,18 @@ function initFormValidation(root = document) {
     if (form.dataset._validated) return;
     form.dataset._validated = "true";
 
-    form.querySelectorAll("input, textarea").forEach(input => {
+    form.querySelectorAll(".form-control, input[type='checkbox'], input[type='radio']").forEach(input => {
       input.addEventListener("input", () => validateField(input));
+      input.addEventListener("blur", () => validateField(input));
     });
-
     form.addEventListener("submit", e => {
-      if (!validateForm(form)) e.preventDefault();
+      if (!validateForm(form)) {
+        e.preventDefault();
+        const firstError = form.querySelector(".form-group.error");
+        if (firstError) {
+          firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
     });
   });
 }
@@ -730,102 +752,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     initSwiperSlider({
-      mainSelector: '.service-list',
-      minSlides: 0,
-      loop: true,
-      slidesPerView: 1,
-      spaceBetween: 20,
-      grid: {
-        rows: 1,
-        fill: 'row'
-      },
-      navigation: {
-        nextEl: '.service-slider-wrapper .custom-next-btn',
-        prevEl: '.service-slider-wrapper .custom-prev-btn',
-      },
-      pagination: {
-        el: '.service-list .swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-          grid: {
-            rows: 2,
-            fill: 'row'
-          },
-        },
-        1000: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-          grid: {
-            rows: 1,
-            fill: 'row'
-          },
-        },
-        500: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-          grid: {
-            rows: 1,
-            fill: 'row'
-          },
-        },
-      },
-    });
-
-    initSwiperSlider({
-      mainSelector: '.service-intro__list',
-      minSlides: 0,
-      loop: true,
-      slidesPerView: 1,
-      spaceBetween: 20,
-      grid: {
-        rows: 1,
-        fill: 'row'
-      },
-      navigation: {
-        nextEl: '.process-slider-wrapper .custom-next-btn',
-        prevEl: '.process-slider-wrapper .custom-prev-btn',
-      },
-      pagination: {
-        el: '.service-list .swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-          grid: {
-            rows: 2,
-            fill: 'row'
-          },
-        },
-        1000: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-          grid: {
-            rows: 1,
-            fill: 'row'
-          },
-        },
-        500: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-          grid: {
-            rows: 1,
-            fill: 'row'
-          },
-        },
-      },
-    });
-
-    initSwiperSlider({
       mainSelector: '.product-thumb-swiper',
-      slidesPerView: 4,        
-      spaceBetween: 10,       
-      watchSlidesProgress: true 
+      slidesPerView: 4,
+      spaceBetween: 10,
+      watchSlidesProgress: true
     });
 
     initSwiperSlider({
@@ -835,52 +765,6 @@ document.addEventListener("DOMContentLoaded", () => {
       thumbs: {
         swiper: '.product-thumb-swiper'
       }
-    });
-
-    initSwiperSlider({
-      mainSelector: '.service-list',
-      minSlides: 0,
-      loop: true,
-      slidesPerView: 1,
-      spaceBetween: 20,
-      grid: {
-        rows: 1,
-        fill: 'row'
-      },
-      navigation: {
-        nextEl: '.intro-slider-wrapper .custom-next-btn',
-        prevEl: '.intro-slider-wrapper .custom-prev-btn',
-      },
-      pagination: {
-        el: '.service-list .swiper-pagination',
-        clickable: true,
-      },
-      breakpoints: {
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-          grid: {
-            rows: 2,
-            fill: 'row'
-          },
-        },
-        1000: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-          grid: {
-            rows: 1,
-            fill: 'row'
-          },
-        },
-        500: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-          grid: {
-            rows: 1,
-            fill: 'row'
-          },
-        },
-      },
     });
 
     initSwiperSlider({
@@ -1027,9 +911,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     ]);
-    // 🟡 roll to the top
     initScrollToTop();
-    // ✨ 4️⃣ HIỆU ỨNG ẢNH & REVEAL
     applyImageEnhancements();
     initRevealEffect();
     initFormValidation();
